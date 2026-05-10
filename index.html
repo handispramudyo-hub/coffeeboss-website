@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoffeeBoss Indonesia — Supplier & Exportir Green Coffee Beans</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
     <script>
       tailwind.config = {
         theme: {
@@ -39,402 +36,108 @@
                 300: "#86efac",
                 200: "#bbf7d0",
                 100: "#dcfce7",
-                50: "#f0fdf4",
               },
             },
           },
         },
       };
     </script>
-    <style>
-      * {
-        font-family: "Inter", sans-serif;
-      }
-      body {
-        background: #0c0603;
-        color: #e8cba0;
-      }
 
-      .nav-scroll {
-        background: rgba(12, 6, 3, 0.92);
-        backdrop-filter: blur(16px);
-        border-bottom: 1px solid rgba(212, 167, 110, 0.1);
-      }
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-      .glass {
-        background: rgba(45, 26, 8, 0.6);
-        backdrop-filter: blur(16px);
-        border: 1px solid rgba(212, 167, 110, 0.1);
-      }
-      .glass-hover {
-        transition: all 500ms ease;
-      }
-      .glass-hover:hover {
-        background: rgba(74, 46, 15, 0.5);
-        border-color: rgba(212, 167, 110, 0.2);
-        transform: translateY(-4px);
-      }
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
-      .card {
-        background: rgba(45, 26, 8, 0.5);
-        border: 1px solid rgba(212, 167, 110, 0.08);
-        border-radius: 1.5rem;
-        transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .card:hover {
-        background: rgba(74, 46, 15, 0.5);
-        border-color: rgba(212, 167, 110, 0.18);
-        transform: translateY(-5px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-      }
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 
-      .btn-brown {
-        background: linear-gradient(135deg, #a06a2b, #6b4216);
-        color: #fff;
-        transition: all 200ms ease;
-        box-shadow: 0 4px 20px rgba(160, 106, 43, 0.25);
-      }
-      .btn-brown:hover {
-        box-shadow: 0 6px 30px rgba(160, 106, 43, 0.4);
-        transform: translateY(-1px);
-      }
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
 
-      .btn-green {
-        background: linear-gradient(135deg, #22c55e, #15803d);
-        color: #fff;
-        transition: all 200ms ease;
-        box-shadow: 0 4px 20px rgba(22, 163, 74, 0.25);
-      }
-      .btn-green:hover {
-        box-shadow: 0 6px 30px rgba(22, 163, 74, 0.4);
-        transform: translateY(-1px);
-      }
-
-      .btn-outline {
-        border: 1.5px solid rgba(212, 167, 110, 0.25);
-        color: #d4a76e;
-        transition: all 200ms ease;
-        background: transparent;
-      }
-      .btn-outline:hover {
-        background: rgba(160, 106, 43, 0.15);
-        border-color: #a06a2b;
-        color: #e8cba0;
-      }
-
-      .product-img {
-        transition: transform 600ms ease;
-      }
-      .card:hover .product-img {
-        transform: scale(1.06);
-      }
-
-      .text-warm {
-        color: #e8cba0;
-      }
-      .text-warm-dim {
-        color: rgba(232, 203, 160, 0.5);
-      }
-      .text-warm-muted {
-        color: rgba(232, 203, 160, 0.65);
-      }
-      .text-brown-accent {
-        color: #c28b45;
-      }
-      .text-green-accent {
-        color: #4ade80;
-      }
-
-      .text-grad-warm {
-        background: linear-gradient(to bottom right, #f5e6d0, #d4a76e, #8b5a1e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .text-grad-brown {
-        background: linear-gradient(135deg, #d4a76e, #a06a2b);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-      .text-grad-green {
-        background: linear-gradient(135deg, #4ade80, #22c55e);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-      }
-
-      .bg-section-alt {
-        background: rgba(26, 15, 4, 0.8);
-      }
-
-      .divider-warm {
-        height: 1px;
-        background: linear-gradient(
-          to right,
-          transparent,
-          rgba(212, 167, 110, 0.12),
-          transparent
-        );
-      }
-
-      .glow-brown {
-        box-shadow: 0 0 25px rgba(160, 106, 43, 0.3);
-      }
-      .glow-green {
-        box-shadow: 0 0 25px rgba(22, 163, 74, 0.3);
-      }
-
-      .stat-card {
-        position: relative;
-        overflow: hidden;
-      }
-      .stat-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: linear-gradient(to right, #a06a2b, #22c55e);
-        opacity: 0;
-        transition: opacity 400ms;
-      }
-      .stat-card:hover::before {
-        opacity: 1;
-      }
-
-      .nav-link {
-        position: relative;
-      }
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: #a06a2b;
-        transition: width 250ms;
-      }
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .marquee {
-        overflow: hidden;
-        white-space: nowrap;
-      }
-      .marquee-content {
-        display: inline-block;
-        animation: marquee 28s linear infinite;
-      }
-      @keyframes marquee {
-        0% {
-          transform: translateX(0);
-        }
-        100% {
-          transform: translateX(-50%);
-        }
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-      }
-      @keyframes fadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(25px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .animate-fade-in-up {
-        animation: fadeInUp 0.7s ease-out forwards;
-      }
-      .animate-float {
-        animation: float 3s ease-in-out infinite;
-      }
-      .delay-200 {
-        animation-delay: 0.2s;
-      }
-      .delay-300 {
-        animation-delay: 0.3s;
-      }
-
-      .scroll-reveal {
-        opacity: 0;
-        transform: translateY(25px);
-        transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .scroll-reveal.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .mobile-menu {
-        transform: translateX(100%);
-        transition: transform 400ms ease;
-      }
-      .mobile-menu.open {
-        transform: translateX(0);
-      }
-
-      .toast {
-        transform: translateY(100px);
-        opacity: 0;
-        transition: all 400ms ease;
-      }
-      .toast.show {
-        transform: translateY(0);
-        opacity: 1;
-      }
-
-      .ig-overlay {
-        background: rgba(12, 6, 3, 0);
-        transition: background 300ms;
-      }
-      .group:hover .ig-overlay {
-        background: rgba(12, 6, 3, 0.5);
-      }
-
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #0c0603;
-      }
-      ::-webkit-scrollbar-thumb {
-        background: rgba(160, 106, 43, 0.3);
-        border-radius: 3px;
-      }
-      ::-webkit-scrollbar-thumb:hover {
-        background: rgba(160, 106, 43, 0.5);
-      }
-
-      .hero-glow {
-        position: absolute;
-        width: 700px;
-        height: 700px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(160, 106, 43, 0.06) 0%,
-          transparent 70%
-        );
-        top: -200px;
-        right: -150px;
-        pointer-events: none;
-      }
-      .hero-glow2 {
-        position: absolute;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        background: radial-gradient(
-          circle,
-          rgba(22, 163, 74, 0.04) 0%,
-          transparent 70%
-        );
-        bottom: -100px;
-        left: -150px;
-        pointer-events: none;
-      }
-
-      .origin-card {
-        position: relative;
-        overflow: hidden;
-      }
-      .origin-card::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-          to top,
-          rgba(12, 6, 3, 0.9) 0%,
-          rgba(12, 6, 3, 0.3) 50%,
-          transparent 100%
-        );
-        pointer-events: none;
-      }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="overflow-x-hidden">
-    <!-- Nav -->
-    <nav
-      id="navbar"
-      class="fixed top-0 left-0 right-0 z-50 py-4 px-6 transition-all duration-300"
+  <body class="overflow-x-hidden bg-white text-br-700 font-inter">
+    <!-- ==================== PRELOADER ==================== -->
+    <div
+      id="preloader"
+      class="fixed inset-0 z-[9999] bg-br-800 flex items-center justify-center"
     >
-      <div class="max-w-7xl mx-auto flex items-center justify-between">
-        <a href="#" class="flex items-center gap-3">
+      <div class="text-center">
+        <div
+          class="w-16 h-16 rounded-2xl bg-lv-600 flex items-center justify-center mx-auto mb-6"
+        >
+          <span
+            class="iconify text-white text-3xl"
+            data-icon="mdi:coffee"
+          ></span>
+        </div>
+        <div class="w-36 h-[3px] bg-br-700 rounded-full overflow-hidden">
           <div
-            class="w-10 h-10 rounded-xl bg-gradient-to-br from-br-400 to-br-600 flex items-center justify-center glow-brown"
+            id="preloader-bar"
+            class="h-full bg-gradient-to-r from-br-300 to-lv-400 rounded-full"
+            style="width: 0%"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CUSTOM CURSOR (Desktop) ==================== -->
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <!-- ==================== NAVIGATION (coklat tua) ==================== -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 header-dark">
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between h-16 px-6"
+      >
+        <a href="#" class="flex items-center gap-3 group">
+          <div
+            class="w-9 h-9 rounded-lg bg-lv-600 flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
           >
             <span
-              class="iconify text-white text-xl"
+              class="iconify text-white text-lg"
               data-icon="mdi:coffee"
             ></span>
           </div>
           <div>
-            <span class="text-lg font-bold text-br-50 tracking-tight"
+            <span class="text-base font-bold text-white tracking-tight"
               >CoffeeBoss</span
             >
             <span
-              class="block text-[10px] font-semibold text-lv-400 tracking-widest uppercase -mt-0.5"
+              class="block text-[9px] font-semibold text-lv-400 tracking-widest uppercase -mt-0.5"
               >Indonesia</span
             >
           </div>
         </a>
-        <div class="hidden lg:flex items-center gap-8">
-          <a
-            href="#home"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Beranda</a
-          >
-          <a
-            href="#about"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Tentang</a
-          >
-          <a
-            href="#products"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Produk</a
-          >
-          <a
-            href="#origin"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Asal</a
-          >
-          <a
-            href="#process"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Proses</a
-          >
-          <a
-            href="#contact"
-            class="nav-link text-sm font-medium text-warm-dim hover:text-warm transition-colors"
-            >Kontak</a
-          >
+        <div class="hidden lg:flex items-center gap-7">
+          <a href="#home" class="nav-link text-sm font-medium">Beranda</a>
+          <a href="#about" class="nav-link text-sm font-medium">Tentang</a>
+          <a href="#products" class="nav-link text-sm font-medium">Produk</a>
+          <a href="#origin" class="nav-link text-sm font-medium">Asal</a>
+          <a href="#process" class="nav-link text-sm font-medium">Proses</a>
+          <a href="#contact" class="nav-link text-sm font-medium">Kontak</a>
         </div>
         <div class="flex items-center gap-3">
           <a
             href="https://wa.me/6281234567890"
             target="_blank"
-            class="hidden md:flex btn-green px-5 py-2.5 rounded-xl text-sm font-semibold items-center gap-2"
+            class="hidden md:flex btn-green px-4 py-2 rounded-lg text-sm font-semibold items-center gap-2"
+            data-magnetic
           >
-            <span class="iconify text-base" data-icon="mdi:whatsapp"></span>
-            Hubungi Kami
+            <span class="iconify text-base" data-icon="mdi:whatsapp"></span
+            >Hubungi Kami
           </a>
-          <button id="menuToggle" class="lg:hidden text-br-50 p-2">
+          <button
+            id="menuToggle"
+            class="lg:hidden text-white p-1"
+            data-magnetic
+          >
             <span class="iconify text-2xl" data-icon="mdi:menu"></span>
           </button>
         </div>
@@ -444,102 +147,117 @@
     <!-- Mobile Menu -->
     <div
       id="mobileMenu"
-      class="mobile-menu fixed inset-0 z-[60] flex flex-col"
-      style="background: #0c0603"
+      class="mobile-menu fixed inset-0 z-[60] header-dark flex flex-col"
     >
-      <div class="flex items-center justify-between p-6 border-b border-br-800">
+      <div class="flex items-center justify-between px-6 h-16">
         <a href="#" class="flex items-center gap-3">
           <div
-            class="w-10 h-10 rounded-xl bg-gradient-to-br from-br-400 to-br-600 flex items-center justify-center"
+            class="w-9 h-9 rounded-lg bg-lv-600 flex items-center justify-center"
           >
             <span
-              class="iconify text-white text-xl"
+              class="iconify text-white text-lg"
               data-icon="mdi:coffee"
             ></span>
           </div>
-          <span class="text-lg font-bold text-br-50">CoffeeBoss</span>
+          <span class="text-base font-bold text-white">CoffeeBoss</span>
         </a>
-        <button id="menuClose" class="text-br-50 p-2">
+        <button id="menuClose" class="text-white p-1">
           <span class="iconify text-2xl" data-icon="mdi:close"></span>
         </button>
       </div>
       <div class="flex-1 flex flex-col items-center justify-center gap-7">
         <a
           href="#home"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Beranda</a
         >
         <a
           href="#about"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Tentang</a
         >
         <a
           href="#products"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Produk</a
         >
         <a
           href="#origin"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Asal</a
         >
         <a
           href="#process"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Proses</a
         >
         <a
           href="#contact"
-          class="mobile-link text-2xl font-semibold text-br-50 hover:text-br-200 transition-colors"
+          class="mobile-link text-2xl font-semibold text-br-100 hover:text-white transition-colors"
           >Kontak</a
         >
         <a
           href="https://wa.me/6281234567890"
           target="_blank"
           class="btn-green px-8 py-3 rounded-xl text-base font-semibold flex items-center gap-2 mt-4"
+          data-magnetic
         >
           <span class="iconify" data-icon="mdi:whatsapp"></span>Hubungi Kami
         </a>
       </div>
     </div>
 
-    <!-- Hero -->
+    <!-- ==================== HERO (putih) ==================== -->
     <section
       id="home"
-      class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden"
+      class="relative min-h-screen flex items-center pt-20 pb-16 overflow-hidden bg-white"
     >
       <div class="hero-glow"></div>
       <div class="hero-glow2"></div>
       <div
         class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10"
       >
-        <div class="space-y-7 animate-fade-in-up">
+        <div class="space-y-7">
           <div
-            class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full glow-brown"
+            class="hero-badge inline-flex items-center gap-2 bg-lv-100 border border-lv-200 px-4 py-2 rounded-full opacity-0"
           >
-            <span class="w-2 h-2 rounded-full bg-lv-500 animate-pulse"></span>
+            <span class="w-2 h-2 rounded-full bg-lv-600 animate-pulse"></span>
             <span
-              class="text-xs font-semibold text-lv-400 tracking-wide uppercase"
+              class="text-xs font-semibold text-lv-800 tracking-wide uppercase"
               >Supplier & Exportir</span
             >
           </div>
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-grad-warm"
+            class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.08] text-br-800"
           >
-            Green Coffee<br />Beans dari<br />Temanggung
+            <span class="hero-line overflow-hidden block"
+              ><span class="hero-line-inner inline-block"
+                >Green Coffee</span
+              ></span
+            >
+            <span class="hero-line overflow-hidden block"
+              ><span class="hero-line-inner inline-block"
+                >Beans dari</span
+              ></span
+            >
+            <span class="hero-line overflow-hidden block"
+              ><span class="hero-line-inner inline-block text-br-500"
+                >Temanggung</span
+              ></span
+            >
           </h1>
           <p
-            class="text-lg font-light text-warm-muted max-w-xl leading-relaxed"
+            class="hero-text text-lg font-light text-br-600/60 max-w-xl leading-relaxed opacity-0"
           >
             Menyediakan kopi hijau berkualitas tinggi langsung dari petani
             Temanggung, Jawa Tengah. Grade I, Grade II, hingga Arabica
             Specialty.
           </p>
-          <div class="flex flex-wrap gap-4">
+          <div class="hero-btns flex flex-wrap gap-4 opacity-0">
             <a
               href="#products"
               class="btn-brown px-8 py-3.5 rounded-xl text-sm font-semibold flex items-center gap-2"
+              data-magnetic
             >
               Lihat Produk
               <span class="iconify" data-icon="mdi:arrow-right"></span>
@@ -547,47 +265,56 @@
             <a
               href="#about"
               class="btn-outline px-8 py-3.5 rounded-xl text-sm font-semibold"
+              data-magnetic
               >Pelajari Lebih</a
             >
           </div>
-          <div class="flex gap-10 pt-3">
+          <div class="hero-stats flex gap-10 pt-3 opacity-0">
             <div>
-              <div class="text-3xl font-extrabold text-br-50">
-                500<span class="text-lv-400">+</span>
+              <div class="text-3xl font-extrabold text-br-800">
+                500<span class="text-lv-700">+</span>
               </div>
-              <div class="text-xs text-warm-dim mt-1">Ton/Tahun</div>
+              <div class="text-xs text-br-400 mt-1 font-medium">Ton/Tahun</div>
             </div>
-            <div class="w-px bg-br-700"></div>
+            <div class="w-px bg-br-100"></div>
             <div>
-              <div class="text-3xl font-extrabold text-br-50">
-                15<span class="text-lv-400">+</span>
+              <div class="text-3xl font-extrabold text-br-800">
+                15<span class="text-lv-700">+</span>
               </div>
-              <div class="text-xs text-warm-dim mt-1">Negara Ekspor</div>
+              <div class="text-xs text-br-400 mt-1 font-medium">
+                Negara Ekspor
+              </div>
             </div>
-            <div class="w-px bg-br-700"></div>
+            <div class="w-px bg-br-100"></div>
             <div>
-              <div class="text-3xl font-extrabold text-br-50">
-                100<span class="text-lv-400">%</span>
+              <div class="text-3xl font-extrabold text-br-800">
+                100<span class="text-lv-700">%</span>
               </div>
-              <div class="text-xs text-warm-dim mt-1">Organik</div>
+              <div class="text-xs text-br-400 mt-1 font-medium">Organik</div>
             </div>
           </div>
         </div>
-        <div class="relative animate-fade-in-up delay-300" style="opacity: 0">
-          <div class="relative rounded-3xl overflow-hidden aspect-[4/5] group">
+        <div class="hero-image relative opacity-0">
+          <div
+            class="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl group"
+            data-parallax="0.15"
+          >
+            <!-- GANTI: images/hero-sacks.jpg -->
             <img
               src="https://picsum.photos/seed/coffeeboss-hero-sacks/800/1000.jpg"
-              alt="Green Coffee"
-              class="product-img w-full h-full object-cover"
+              alt="Green Coffee Beans"
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div
-              class="absolute inset-0 bg-gradient-to-t from-br-950/80 via-transparent to-transparent"
+              class="absolute inset-0 bg-gradient-to-t from-br-900/70 via-transparent to-transparent"
             ></div>
             <div class="absolute bottom-6 left-6 right-6">
-              <div class="glass rounded-2xl p-4">
+              <div
+                class="bg-white/95 backdrop-blur rounded-2xl p-4 shadow-lg border border-br-50"
+              >
                 <div class="flex items-center gap-3">
                   <div
-                    class="w-12 h-12 rounded-xl bg-gradient-to-br from-br-400 to-br-600 flex items-center justify-center flex-shrink-0"
+                    class="w-12 h-12 rounded-xl bg-br-800 flex items-center justify-center flex-shrink-0"
                   >
                     <span
                       class="iconify text-white text-2xl"
@@ -595,10 +322,10 @@
                     ></span>
                   </div>
                   <div>
-                    <div class="text-sm font-bold text-br-50">
+                    <div class="text-sm font-bold text-br-800">
                       Sertifikasi Export Quality
                     </div>
-                    <div class="text-xs text-warm-dim mt-0.5">
+                    <div class="text-xs text-br-400 mt-0.5">
                       Memenuhi standar internasional
                     </div>
                   </div>
@@ -607,31 +334,30 @@
             </div>
           </div>
           <div
-            class="absolute -top-4 -right-4 glass rounded-2xl p-4 animate-float hidden md:block"
+            class="hero-float-1 absolute -top-4 -right-4 bg-white rounded-2xl p-4 shadow-lg hidden md:block border border-br-50 opacity-0"
           >
             <div class="flex items-center gap-2">
               <span
-                class="iconify text-br-300 text-xl"
+                class="iconify text-br-500 text-xl"
                 data-icon="mdi:star"
               ></span>
               <div>
-                <div class="text-sm font-bold text-br-50">Specialty Grade</div>
-                <div class="text-xs text-warm-dim">80+ SCA Score</div>
+                <div class="text-sm font-bold text-br-800">Specialty Grade</div>
+                <div class="text-xs text-br-400">80+ SCA Score</div>
               </div>
             </div>
           </div>
           <div
-            class="absolute -bottom-4 -left-4 glass rounded-2xl p-4 animate-float hidden md:block"
-            style="animation-delay: 1.5s"
+            class="hero-float-2 absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-lg hidden md:block border border-lv-100 opacity-0"
           >
             <div class="flex items-center gap-2">
               <span
-                class="iconify text-lv-400 text-xl"
+                class="iconify text-lv-700 text-xl"
                 data-icon="mdi:map-marker"
               ></span>
               <div>
-                <div class="text-sm font-bold text-br-50">Temanggung</div>
-                <div class="text-xs text-lv-400 font-medium">Jawa Tengah</div>
+                <div class="text-sm font-bold text-br-800">Temanggung</div>
+                <div class="text-xs text-lv-700 font-medium">Jawa Tengah</div>
               </div>
             </div>
           </div>
@@ -639,476 +365,484 @@
       </div>
     </section>
 
-    <!-- Marquee -->
-    <div class="py-5 border-y border-br-800/50">
-      <div class="marquee">
-        <div class="marquee-content">
-          <span class="text-sm font-semibold text-br-600 mx-8">ARABICA</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">ROBUSTA</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">GRADE I</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">GRADE II</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">SPECIALTY</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">WET HULLING</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">NATURAL</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">HONEY</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">TEMANGGUNG</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">ARABICA</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">ROBUSTA</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">GRADE I</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">GRADE II</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">SPECIALTY</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">WET HULLING</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">NATURAL</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">HONEY</span
-          ><span class="text-lv-700 mx-2">●</span>
-          <span class="text-sm font-semibold text-br-600 mx-8">TEMANGGUNG</span
-          ><span class="text-lv-700 mx-2">●</span>
+    <!-- DIVIDER -->
+    <div class="divider-accent"></div>
+
+    <!-- ==================== MARQUEE BAR (coklat tua) ==================== -->
+    <div class="py-4 bg-br-800 border-b-2 border-br-600 overflow-hidden">
+      <div class="marquee-track">
+        <div class="marquee-content flex gap-0">
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >ARABICA</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >ROBUSTA</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >GRADE I</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >GRADE II</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >SPECIALTY</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >WET HULLING</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >NATURAL</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >HONEY</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >TEMANGGUNG</span
+          ><span class="text-lv-500 mx-2">●</span>
+        </div>
+        <div class="marquee-content flex gap-0" aria-hidden="true">
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >ARABICA</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >ROBUSTA</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >GRADE I</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >GRADE II</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >SPECIALTY</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >WET HULLING</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >NATURAL</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >HONEY</span
+          ><span class="text-lv-500 mx-2">●</span>
+          <span class="text-sm font-semibold text-br-200 mx-8 whitespace-nowrap"
+            >TEMANGGUNG</span
+          ><span class="text-lv-500 mx-2">●</span>
         </div>
       </div>
     </div>
 
-    <!-- About -->
-    <section id="about" class="py-24 px-6">
+    <!-- ==================== ABOUT (putih) ==================== -->
+    <section id="about" class="py-24 px-6 bg-white">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        <div class="scroll-reveal relative">
-          <div class="grid grid-cols-2 gap-4">
-            <div class="space-y-4">
-              <div class="rounded-2xl overflow-hidden aspect-[3/4]">
-                <img
-                  src="https://picsum.photos/seed/coffeeboss-farm1/500/667.jpg"
-                  alt="Kebun"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
-              <div class="glass rounded-2xl p-4 text-center">
-                <div class="text-3xl font-extrabold text-brown-accent">
-                  2018
-                </div>
-                <div class="text-xs text-warm-dim mt-1">Tahun Berdiri</div>
-              </div>
+        <div class="grid grid-cols-2 gap-4" data-stagger="0.1">
+          <div class="space-y-4">
+            <div class="rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
+              <!-- GANTI: images/farm-1.jpg --><img
+                src="https://picsum.photos/seed/coffeeboss-farm1/500/667.jpg"
+                alt="Kebun"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
             </div>
-            <div class="space-y-4 pt-8">
-              <div class="glass rounded-2xl p-4 text-center">
-                <div class="text-3xl font-extrabold text-green-accent">
-                  500+
-                </div>
-                <div class="text-xs text-warm-dim mt-1">Petani Mitra</div>
-              </div>
-              <div class="rounded-2xl overflow-hidden aspect-[3/4]">
-                <img
-                  src="https://picsum.photos/seed/coffeeboss-beans-close/500/667.jpg"
-                  alt="Beans"
-                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+            <div class="bg-br-800 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-extrabold text-br-200">2018</div>
+              <div class="text-xs text-br-300 mt-1">Tahun Berdiri</div>
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="bg-lv-800 rounded-2xl p-4 text-center">
+              <div class="text-3xl font-extrabold text-lv-200">500+</div>
+              <div class="text-xs text-lv-300 mt-1">Petani Mitra</div>
+            </div>
+            <div class="rounded-2xl overflow-hidden aspect-[3/4] shadow-lg">
+              <!-- GANTI: images/beans-close.jpg --><img
+                src="https://picsum.photos/seed/coffeeboss-beans-close/500/667.jpg"
+                alt="Beans"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
             </div>
           </div>
         </div>
-        <div class="scroll-reveal space-y-6">
+        <div class="space-y-6" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-br-700 bg-br-800/50"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-br-50 border-2 border-br-200"
           >
-            <span
-              class="text-xs font-semibold text-br-300 tracking-wide uppercase"
+            <span class="text-xs font-bold text-br-600 tracking-wide uppercase"
               >Tentang Kami</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800"
           >
             Dari Temanggung<br />untuk Dunia
           </h2>
-          <p class="text-warm-muted font-light leading-relaxed">
+          <p class="text-br-500 font-light leading-relaxed">
             CoffeeBoss Indonesia hadir sebagai penghubung antara petani kopi
             lokal di Temanggung dengan pasar global. Kami memastikan setiap biji
             kopi hijau yang kami supply memenuhi standar kualitas tertinggi.
           </p>
-          <p class="text-warm-muted font-light leading-relaxed">
+          <p class="text-br-500 font-light leading-relaxed">
             Dengan ketinggian kebun 800-1.500 mdpl, tanah vulkanik yang subur,
             dan pengolahan yang teliti, kopi dari Temanggung memiliki karakter
-            rasa yang unik dan dicari roaster di seluruh dunia.
+            rasa yang unik.
           </p>
-          <div class="grid grid-cols-2 gap-4 pt-4">
-            <div class="glass glass-hover rounded-xl p-4">
+          <div class="grid grid-cols-2 gap-4 pt-4" data-stagger="0.08">
+            <div
+              class="bg-lv-50 border-2 border-lv-200 rounded-xl p-4 hover:border-lv-400 transition-colors"
+            >
               <span
-                class="iconify text-lv-400 text-2xl"
+                class="iconify text-lv-700 text-2xl"
                 data-icon="mdi:leaf"
               ></span>
-              <div class="text-sm font-bold text-br-50 mt-2">100% Organik</div>
-              <div class="text-xs text-warm-dim mt-1">Tanpa pestisida</div>
+              <div class="text-sm font-bold text-br-800 mt-2">100% Organik</div>
+              <div class="text-xs text-br-400 mt-1">Tanpa pestisida</div>
             </div>
-            <div class="glass glass-hover rounded-xl p-4">
+            <div
+              class="bg-br-50 border-2 border-br-200 rounded-xl p-4 hover:border-br-400 transition-colors"
+            >
               <span
-                class="iconify text-br-300 text-2xl"
+                class="iconify text-br-600 text-2xl"
                 data-icon="mdi:hand-heart"
               ></span>
-              <div class="text-sm font-bold text-br-50 mt-2">Fair Trade</div>
-              <div class="text-xs text-warm-dim mt-1">Harga adil petani</div>
+              <div class="text-sm font-bold text-br-800 mt-2">Fair Trade</div>
+              <div class="text-xs text-br-400 mt-1">Harga adil petani</div>
             </div>
-            <div class="glass glass-hover rounded-xl p-4">
+            <div
+              class="bg-lv-50 border-2 border-lv-200 rounded-xl p-4 hover:border-lv-400 transition-colors"
+            >
               <span
-                class="iconify text-lv-400 text-2xl"
+                class="iconify text-lv-700 text-2xl"
                 data-icon="mdi:truck-delivery"
               ></span>
-              <div class="text-sm font-bold text-br-50 mt-2">
+              <div class="text-sm font-bold text-br-800 mt-2">
                 Pengiriman Cepat
               </div>
-              <div class="text-xs text-warm-dim mt-1">Domestik & ekspor</div>
+              <div class="text-xs text-br-400 mt-1">Domestik & ekspor</div>
             </div>
-            <div class="glass glass-hover rounded-xl p-4">
+            <div
+              class="bg-br-50 border-2 border-br-200 rounded-xl p-4 hover:border-br-400 transition-colors"
+            >
               <span
-                class="iconify text-br-300 text-2xl"
+                class="iconify text-br-600 text-2xl"
                 data-icon="mdi:shield-check"
               ></span>
-              <div class="text-sm font-bold text-br-50 mt-2">
+              <div class="text-sm font-bold text-br-800 mt-2">
                 Quality Control
               </div>
-              <div class="text-xs text-warm-dim mt-1">Grading ketat</div>
+              <div class="text-xs text-br-400 mt-1">Grading ketat</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
+    <div class="divider-accent"></div>
 
-    <!-- Products -->
-    <section id="products" class="py-24 px-6 bg-section-alt">
+    <!-- ==================== PRODUCTS (krem tipis) ==================== -->
+    <section id="products" class="py-24 px-6 section-cream">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-br-700 bg-br-800/50 mb-6"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-br-50 border-2 border-br-200 mb-6"
           >
-            <span
-              class="text-xs font-semibold text-br-300 tracking-wide uppercase"
+            <span class="text-xs font-bold text-br-600 tracking-wide uppercase"
               >Produk Kami</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm mb-4"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800 mb-4"
           >
             Green Coffee Beans
           </h2>
-          <p class="text-warm-muted font-light">
+          <p class="text-br-400 font-light">
             Beragam varietas dan grade kopi hijau pilihan dari dataran tinggi
             Temanggung
           </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div class="card overflow-hidden group scroll-reveal">
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          data-stagger="0.12"
+        >
+          <!-- Product 1 -->
+          <div class="card overflow-hidden group">
             <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src="https://picsum.photos/seed/coffeeboss-arabica-spec/600/450.jpg"
-                alt="Specialty"
+                alt="Arabica Specialty"
                 class="product-img w-full h-full object-cover"
               />
               <div class="absolute top-4 left-4">
                 <span
-                  class="px-3 py-1 rounded-full bg-br-500 text-white text-xs font-bold glow-brown"
+                  class="px-3 py-1 rounded-full bg-br-800 text-white text-xs font-bold"
                   >Specialty</span
                 >
               </div>
               <div class="absolute top-4 right-4">
                 <span
-                  class="px-3 py-1 rounded-full glass text-xs font-semibold text-warm"
+                  class="px-3 py-1 rounded-full bg-white/90 text-br-800 text-xs font-semibold border border-br-100"
                   >Arabica</span
                 >
               </div>
             </div>
             <div class="p-6 space-y-3">
-              <h3 class="text-xl font-bold text-br-50">Arabica Specialty</h3>
-              <p class="text-sm text-warm-muted font-light leading-relaxed">
-                Grade khusus dengan skor cupping 80+. Dari ketinggian
-                1.200-1.500 mdpl. Proses Honey & Natural.
+              <h3 class="text-xl font-bold text-br-800">Arabica Specialty</h3>
+              <p class="text-sm text-br-400 font-light leading-relaxed">
+                Grade khusus skor cupping 80+. Dari ketinggian 1.200-1.500 mdpl.
+                Proses Honey & Natural.
               </p>
               <div class="flex flex-wrap gap-2 pt-1">
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >80+ SCA</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Honey</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Natural</span
-                >
-                <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
-                  >Washed</span
                 >
               </div>
               <a
                 href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Arabica%20Specialty"
                 target="_blank"
-                class="flex items-center gap-2 text-sm font-semibold text-brown-accent hover:text-br-200 transition-colors pt-2 group/l"
-                ><span>Minta Penawaran</span
-                ><span
+                class="inline-flex items-center gap-2 text-sm font-semibold text-br-500 hover:text-br-700 transition-colors pt-2 group/l"
+                >Minta Penawaran
+                <span
                   class="iconify transition-transform group-hover/l:translate-x-1"
                   data-icon="mdi:arrow-right"
                 ></span
               ></a>
             </div>
           </div>
-
-          <div class="card overflow-hidden group scroll-reveal">
+          <!-- Product 2 -->
+          <div class="card overflow-hidden group">
             <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src="https://picsum.photos/seed/coffeeboss-grade1/600/450.jpg"
-                alt="Grade I"
+                alt="Arabica Grade I"
                 class="product-img w-full h-full object-cover"
               />
               <div class="absolute top-4 left-4">
                 <span
-                  class="px-3 py-1 rounded-full bg-lv-600 text-white text-xs font-bold glow-green"
+                  class="px-3 py-1 rounded-full bg-lv-800 text-white text-xs font-bold"
                   >Grade I</span
                 >
               </div>
               <div class="absolute top-4 right-4">
                 <span
-                  class="px-3 py-1 rounded-full glass text-xs font-semibold text-warm"
+                  class="px-3 py-1 rounded-full bg-white/90 text-br-800 text-xs font-semibold border border-br-100"
                   >Arabica</span
                 >
               </div>
             </div>
             <div class="p-6 space-y-3">
-              <h3 class="text-xl font-bold text-br-50">Arabica Grade I</h3>
-              <p class="text-sm text-warm-muted font-light leading-relaxed">
+              <h3 class="text-xl font-bold text-br-800">Arabica Grade I</h3>
+              <p class="text-sm text-br-400 font-light leading-relaxed">
                 Defect kurang dari 11 per 300gr. Kualitas premium untuk roaster
                 komersial dan specialty market.
               </p>
               <div class="flex flex-wrap gap-2 pt-1">
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >&lt;11 Defect</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Wet Hulling</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >13% MC</span
                 >
               </div>
               <a
                 href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Arabica%20Grade%20I"
                 target="_blank"
-                class="flex items-center gap-2 text-sm font-semibold text-brown-accent hover:text-br-200 transition-colors pt-2 group/l"
-                ><span>Minta Penawaran</span
-                ><span
+                class="inline-flex items-center gap-2 text-sm font-semibold text-lv-700 hover:text-lv-900 transition-colors pt-2 group/l"
+                >Minta Penawaran
+                <span
                   class="iconify transition-transform group-hover/l:translate-x-1"
                   data-icon="mdi:arrow-right"
                 ></span
               ></a>
             </div>
           </div>
-
-          <div class="card overflow-hidden group scroll-reveal">
+          <!-- Product 3 -->
+          <div class="card overflow-hidden group">
             <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src="https://picsum.photos/seed/coffeeboss-grade2/600/450.jpg"
-                alt="Grade II"
+                alt="Arabica Grade II"
                 class="product-img w-full h-full object-cover"
               />
               <div class="absolute top-4 left-4">
                 <span
-                  class="px-3 py-1 rounded-full bg-br-700 text-br-50 text-xs font-bold"
+                  class="px-3 py-1 rounded-full bg-br-400 text-white text-xs font-bold"
                   >Grade II</span
                 >
               </div>
               <div class="absolute top-4 right-4">
                 <span
-                  class="px-3 py-1 rounded-full glass text-xs font-semibold text-warm"
+                  class="px-3 py-1 rounded-full bg-white/90 text-br-800 text-xs font-semibold border border-br-100"
                   >Arabica</span
                 >
               </div>
             </div>
             <div class="p-6 space-y-3">
-              <h3 class="text-xl font-bold text-br-50">Arabica Grade II</h3>
-              <p class="text-sm text-warm-muted font-light leading-relaxed">
+              <h3 class="text-xl font-bold text-br-800">Arabica Grade II</h3>
+              <p class="text-sm text-br-400 font-light leading-relaxed">
                 Defect 12-25 per 300gr. Pilihan ekonomis untuk blend dan
                 roasting komersial besar.
               </p>
               <div class="flex flex-wrap gap-2 pt-1">
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >12-25 Defect</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Blend</span
-                >
-                <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
-                  >Komersial</span
                 >
               </div>
               <a
                 href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Arabica%20Grade%20II"
                 target="_blank"
-                class="flex items-center gap-2 text-sm font-semibold text-brown-accent hover:text-br-200 transition-colors pt-2 group/l"
-                ><span>Minta Penawaran</span
-                ><span
+                class="inline-flex items-center gap-2 text-sm font-semibold text-br-500 hover:text-br-700 transition-colors pt-2 group/l"
+                >Minta Penawaran
+                <span
                   class="iconify transition-transform group-hover/l:translate-x-1"
                   data-icon="mdi:arrow-right"
                 ></span
               ></a>
             </div>
           </div>
-
-          <div class="card overflow-hidden group scroll-reveal">
+          <!-- Product 4 -->
+          <div class="card overflow-hidden group">
             <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src="https://picsum.photos/seed/coffeeboss-robusta1/600/450.jpg"
-                alt="Robusta I"
+                alt="Robusta Grade I"
                 class="product-img w-full h-full object-cover"
               />
               <div class="absolute top-4 left-4">
                 <span
-                  class="px-3 py-1 rounded-full bg-lv-600 text-white text-xs font-bold glow-green"
+                  class="px-3 py-1 rounded-full bg-lv-800 text-white text-xs font-bold"
                   >Grade I</span
                 >
               </div>
               <div class="absolute top-4 right-4">
                 <span
-                  class="px-3 py-1 rounded-full glass text-xs font-semibold text-warm"
+                  class="px-3 py-1 rounded-full bg-white/90 text-br-800 text-xs font-semibold border border-br-100"
                   >Robusta</span
                 >
               </div>
             </div>
             <div class="p-6 space-y-3">
-              <h3 class="text-xl font-bold text-br-50">Robusta Grade I</h3>
-              <p class="text-sm text-warm-muted font-light leading-relaxed">
+              <h3 class="text-xl font-bold text-br-800">Robusta Grade I</h3>
+              <p class="text-sm text-br-400 font-light leading-relaxed">
                 Robusta premium dari Temanggung. Body tebal, cocok untuk
                 espresso blend dan industri.
               </p>
               <div class="flex flex-wrap gap-2 pt-1">
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >&lt;15 Defect</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Full Body</span
-                >
-                <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
-                  >Dry Process</span
                 >
               </div>
               <a
                 href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Robusta%20Grade%20I"
                 target="_blank"
-                class="flex items-center gap-2 text-sm font-semibold text-green-accent hover:text-lv-200 transition-colors pt-2 group/l"
-                ><span>Minta Penawaran</span
-                ><span
+                class="inline-flex items-center gap-2 text-sm font-semibold text-lv-700 hover:text-lv-900 transition-colors pt-2 group/l"
+                >Minta Penawaran
+                <span
                   class="iconify transition-transform group-hover/l:translate-x-1"
                   data-icon="mdi:arrow-right"
                 ></span
               ></a>
             </div>
           </div>
-
-          <div class="card overflow-hidden group scroll-reveal">
+          <!-- Product 5 -->
+          <div class="card overflow-hidden group">
             <div class="relative aspect-[4/3] overflow-hidden">
               <img
                 src="https://picsum.photos/seed/coffeeboss-robusta2/600/450.jpg"
-                alt="Robusta II"
+                alt="Robusta Grade II"
                 class="product-img w-full h-full object-cover"
               />
               <div class="absolute top-4 left-4">
                 <span
-                  class="px-3 py-1 rounded-full bg-br-700 text-br-50 text-xs font-bold"
+                  class="px-3 py-1 rounded-full bg-br-400 text-white text-xs font-bold"
                   >Grade II</span
                 >
               </div>
               <div class="absolute top-4 right-4">
                 <span
-                  class="px-3 py-1 rounded-full glass text-xs font-semibold text-warm"
+                  class="px-3 py-1 rounded-full bg-white/90 text-br-800 text-xs font-semibold border border-br-100"
                   >Robusta</span
                 >
               </div>
             </div>
             <div class="p-6 space-y-3">
-              <h3 class="text-xl font-bold text-br-50">Robusta Grade II</h3>
-              <p class="text-sm text-warm-muted font-light leading-relaxed">
+              <h3 class="text-xl font-bold text-br-800">Robusta Grade II</h3>
+              <p class="text-sm text-br-400 font-light leading-relaxed">
                 Solusi ekonomis untuk kebutuhan volume besar. Kualitas konsisten
                 untuk produksi massal.
               </p>
               <div class="flex flex-wrap gap-2 pt-1">
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-br-50 border border-br-100 text-xs text-br-600 font-medium"
                   >Volume Besar</span
                 >
                 <span
-                  class="px-2.5 py-1 rounded-lg bg-lv-900/60 text-xs text-lv-300 font-medium"
+                  class="px-2.5 py-1 rounded-lg bg-lv-50 border border-lv-100 text-xs text-lv-800 font-medium"
                   >Konsisten</span
-                >
-                <span
-                  class="px-2.5 py-1 rounded-lg bg-br-800/80 text-xs text-br-200 font-medium"
-                  >Kompetitif</span
                 >
               </div>
               <a
                 href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20Robusta%20Grade%20II"
                 target="_blank"
-                class="flex items-center gap-2 text-sm font-semibold text-green-accent hover:text-lv-200 transition-colors pt-2 group/l"
-                ><span>Minta Penawaran</span
-                ><span
+                class="inline-flex items-center gap-2 text-sm font-semibold text-lv-700 hover:text-lv-900 transition-colors pt-2 group/l"
+                >Minta Penawaran
+                <span
                   class="iconify transition-transform group-hover/l:translate-x-1"
                   data-icon="mdi:arrow-right"
                 ></span
               ></a>
             </div>
           </div>
-
+          <!-- Product 6 - Custom -->
           <div
-            class="card overflow-hidden group scroll-reveal flex flex-col justify-center items-center p-8 text-center"
+            class="card overflow-hidden group flex flex-col justify-center items-center p-8 text-center"
             style="
               min-height: 400px;
-              background: linear-gradient(
-                135deg,
-                rgba(45, 26, 8, 0.5),
-                rgba(5, 46, 22, 0.3)
-              );
+              background: linear-gradient(135deg, #fdf8f0, #f0fdf4);
             "
           >
             <div class="space-y-4">
               <div
-                class="w-16 h-16 rounded-2xl glass flex items-center justify-center mx-auto"
+                class="w-16 h-16 rounded-2xl bg-br-800 flex items-center justify-center mx-auto"
               >
                 <span
-                  class="iconify text-br-300 text-3xl"
+                  class="iconify text-br-200 text-3xl"
                   data-icon="mdi:package-variant-closed-plus"
                 ></span>
               </div>
-              <h3 class="text-xl font-bold text-br-50">Custom Order</h3>
-              <p class="text-sm text-warm-muted font-light max-w-xs mx-auto">
+              <h3 class="text-xl font-bold text-br-800">Custom Order</h3>
+              <p class="text-sm text-br-400 font-light max-w-xs mx-auto">
                 Butuh spesifikasi khusus? Kami siap memenuhi kebutuhan grade,
                 proses, dan kemasan sesuai permintaan.
               </p>
               <a
-                href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20custom%20order"
+                href="https://wa.me/6281234567890?text=Halo,%20custom%20order"
                 target="_blank"
                 class="btn-green px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2"
+                data-magnetic
                 ><span class="iconify" data-icon="mdi:whatsapp"></span>Diskusi
                 Sekarang</a
               >
@@ -1118,93 +852,102 @@
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
+    <div class="divider-accent"></div>
 
-    <!-- Origin -->
-    <section id="origin" class="py-24 px-6">
+    <!-- ==================== ORIGIN (putih) ==================== -->
+    <section id="origin" class="py-24 px-6 bg-white">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-lv-800 bg-lv-900/30 mb-6"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lv-50 border-2 border-lv-200 mb-6"
           >
-            <span
-              class="text-xs font-semibold text-lv-400 tracking-wide uppercase"
+            <span class="text-xs font-bold text-lv-800 tracking-wide uppercase"
               >Asal Kopi</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm mb-4"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800 mb-4"
           >
             Temanggung, Jawa Tengah
           </h2>
-          <p class="text-warm-muted font-light">
+          <p class="text-br-400 font-light">
             Dataran tinggi dengan kondisi ideal untuk menanam kopi berkualitas
             dunia
           </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          data-stagger="0.1"
+        >
           <div
-            class="stat-card glass glass-hover rounded-2xl p-6 text-center scroll-reveal"
+            class="bg-white border-2 border-br-100 rounded-2xl p-6 text-center hover:border-br-300 transition-colors stat-bar"
           >
             <div
-              class="w-14 h-14 rounded-2xl bg-br-800/60 flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 rounded-2xl bg-br-800 flex items-center justify-center mx-auto mb-4"
             >
               <span
-                class="iconify text-br-300 text-2xl"
+                class="iconify text-br-200 text-2xl"
                 data-icon="mdi:mountain"
               ></span>
             </div>
-            <div class="text-2xl font-extrabold text-br-50">800-1.500</div>
-            <div class="text-xs text-warm-dim mt-1">
+            <div class="text-2xl font-extrabold text-br-800">800-1.500</div>
+            <div class="text-xs text-br-400 mt-1 font-medium">
               Meter di atas permukaan laut
             </div>
           </div>
           <div
-            class="stat-card glass glass-hover rounded-2xl p-6 text-center scroll-reveal"
+            class="bg-white border-2 border-lv-100 rounded-2xl p-6 text-center hover:border-lv-300 transition-colors stat-bar"
           >
             <div
-              class="w-14 h-14 rounded-2xl bg-lv-900/40 flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 rounded-2xl bg-lv-800 flex items-center justify-center mx-auto mb-4"
             >
               <span
-                class="iconify text-lv-400 text-2xl"
+                class="iconify text-lv-200 text-2xl"
                 data-icon="mdi:thermometer"
               ></span>
             </div>
-            <div class="text-2xl font-extrabold text-br-50">17-24°C</div>
-            <div class="text-xs text-warm-dim mt-1">Suhu rata-rata tahunan</div>
+            <div class="text-2xl font-extrabold text-br-800">17-24°C</div>
+            <div class="text-xs text-br-400 mt-1 font-medium">
+              Suhu rata-rata tahunan
+            </div>
           </div>
           <div
-            class="stat-card glass glass-hover rounded-2xl p-6 text-center scroll-reveal"
+            class="bg-white border-2 border-br-100 rounded-2xl p-6 text-center hover:border-br-300 transition-colors stat-bar"
           >
             <div
-              class="w-14 h-14 rounded-2xl bg-br-800/60 flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 rounded-2xl bg-br-800 flex items-center justify-center mx-auto mb-4"
             >
               <span
-                class="iconify text-br-300 text-2xl"
+                class="iconify text-br-200 text-2xl"
                 data-icon="mdi:water-percent"
               ></span>
             </div>
-            <div class="text-2xl font-extrabold text-br-50">1.500-2.500</div>
-            <div class="text-xs text-warm-dim mt-1">mm curah hujan/tahun</div>
+            <div class="text-2xl font-extrabold text-br-800">1.500-2.500</div>
+            <div class="text-xs text-br-400 mt-1 font-medium">
+              mm curah hujan/tahun
+            </div>
           </div>
           <div
-            class="stat-card glass glass-hover rounded-2xl p-6 text-center scroll-reveal"
+            class="bg-white border-2 border-lv-100 rounded-2xl p-6 text-center hover:border-lv-300 transition-colors stat-bar"
           >
             <div
-              class="w-14 h-14 rounded-2xl bg-lv-900/40 flex items-center justify-center mx-auto mb-4"
+              class="w-14 h-14 rounded-2xl bg-lv-800 flex items-center justify-center mx-auto mb-4"
             >
               <span
-                class="iconify text-lv-400 text-2xl"
+                class="iconify text-lv-200 text-2xl"
                 data-icon="mdi:soil"
               ></span>
             </div>
-            <div class="text-2xl font-extrabold text-br-50">Volkanik</div>
-            <div class="text-xs text-warm-dim mt-1">Jenis tanah Andosol</div>
+            <div class="text-2xl font-extrabold text-br-800">Volkanik</div>
+            <div class="text-xs text-br-400 mt-1 font-medium">
+              Jenis tanah Andosol
+            </div>
           </div>
         </div>
-        <div class="mt-12 scroll-reveal">
+        <div class="mt-12" data-animate>
           <div
-            class="origin-card rounded-3xl overflow-hidden aspect-[21/9] relative"
+            class="origin-card rounded-3xl overflow-hidden aspect-[21/9] relative shadow-xl"
+            data-parallax="0.1"
           >
             <img
               src="https://picsum.photos/seed/coffeeboss-temanggung-landscape/1400/600.jpg"
@@ -1216,11 +959,11 @@
             >
               <div>
                 <div
-                  class="text-xs text-br-300 font-semibold uppercase tracking-wider mb-1"
+                  class="text-xs text-br-200 font-semibold uppercase tracking-wider mb-1"
                 >
                   Lokasi
                 </div>
-                <div class="text-lg font-bold text-br-50">
+                <div class="text-lg font-bold text-white">
                   Temanggung, Jawa Tengah, Indonesia
                 </div>
               </div>
@@ -1230,7 +973,7 @@
                 >
                   Total Area
                 </div>
-                <div class="text-lg font-bold text-br-50">
+                <div class="text-lg font-bold text-white">
                   2.000+ Hektar Kebun Kopi
                 </div>
               </div>
@@ -1240,135 +983,137 @@
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
+    <div class="divider-accent"></div>
 
-    <!-- Process -->
-    <section id="process" class="py-24 px-6 bg-section-alt">
+    <!-- ==================== PROCESS (krem tipis) ==================== -->
+    <section id="process" class="py-24 px-6 section-cream">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-br-700 bg-br-800/50 mb-6"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-br-50 border-2 border-br-200 mb-6"
           >
-            <span
-              class="text-xs font-semibold text-br-300 tracking-wide uppercase"
+            <span class="text-xs font-bold text-br-600 tracking-wide uppercase"
               >Proses</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm mb-4"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800 mb-4"
           >
             Dari Pohon ke Gudang
           </h2>
-          <p class="text-warm-muted font-light">
+          <p class="text-br-400 font-light">
             Setiap tahap kami jalankan dengan standar kualitas ketat
           </p>
         </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          class="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
+          data-stagger="0.15"
+        >
           <div
-            class="glass glass-hover rounded-2xl p-6 relative scroll-reveal group"
+            class="bg-white border-2 border-br-100 rounded-2xl p-6 relative hover:border-br-300 hover:shadow-lg transition-all group process-step"
           >
             <div
-              class="absolute top-6 right-6 text-5xl font-extrabold text-br-800"
+              class="absolute top-6 right-6 text-5xl font-extrabold text-br-50"
             >
               01
             </div>
             <div
-              class="w-12 h-12 rounded-xl bg-br-600 flex items-center justify-center mb-5 group-hover:bg-br-500 transition-colors"
+              class="w-12 h-12 rounded-xl bg-br-800 flex items-center justify-center mb-5 group-hover:bg-br-600 transition-colors"
             >
               <span
                 class="iconify text-white text-xl"
                 data-icon="mdi:fruit-cherries"
               ></span>
             </div>
-            <h3 class="text-lg font-bold text-br-50 mb-2">Panen Selektif</h3>
-            <p class="text-sm text-warm-muted font-light leading-relaxed">
-              Cherry dipetik hanya yang matang sempurna (red cherry pick) untuk
-              kualitas optimal.
+            <h3 class="text-lg font-bold text-br-800 mb-2">Panen Selektif</h3>
+            <p class="text-sm text-br-400 font-light leading-relaxed">
+              Cherry dipetik hanya yang matang sempurna (red cherry pick).
             </p>
           </div>
           <div
-            class="glass glass-hover rounded-2xl p-6 relative scroll-reveal group"
+            class="bg-white border-2 border-lv-100 rounded-2xl p-6 relative hover:border-lv-300 hover:shadow-lg transition-all group process-step"
           >
             <div
-              class="absolute top-6 right-6 text-5xl font-extrabold text-lv-900"
+              class="absolute top-6 right-6 text-5xl font-extrabold text-lv-50"
             >
               02
             </div>
             <div
-              class="w-12 h-12 rounded-xl bg-lv-600 flex items-center justify-center mb-5 group-hover:bg-lv-500 transition-colors"
+              class="w-12 h-12 rounded-xl bg-lv-800 flex items-center justify-center mb-5 group-hover:bg-lv-600 transition-colors"
             >
               <span
                 class="iconify text-white text-xl"
                 data-icon="mdi:water"
               ></span>
             </div>
-            <h3 class="text-lg font-bold text-br-50 mb-2">Pengolahan</h3>
-            <p class="text-sm text-warm-muted font-light leading-relaxed">
-              Wet Hulling, Natural, Honey, dan Washed sesuai permintaan pasar.
+            <h3 class="text-lg font-bold text-br-800 mb-2">Pengolahan</h3>
+            <p class="text-sm text-br-400 font-light leading-relaxed">
+              Wet Hulling, Natural, Honey, dan Washed sesuai permintaan.
             </p>
           </div>
           <div
-            class="glass glass-hover rounded-2xl p-6 relative scroll-reveal group"
+            class="bg-white border-2 border-br-100 rounded-2xl p-6 relative hover:border-br-300 hover:shadow-lg transition-all group process-step"
           >
             <div
-              class="absolute top-6 right-6 text-5xl font-extrabold text-br-800"
+              class="absolute top-6 right-6 text-5xl font-extrabold text-br-50"
             >
               03
             </div>
             <div
-              class="w-12 h-12 rounded-xl bg-br-600 flex items-center justify-center mb-5 group-hover:bg-br-500 transition-colors"
+              class="w-12 h-12 rounded-xl bg-br-800 flex items-center justify-center mb-5 group-hover:bg-br-600 transition-colors"
             >
               <span
                 class="iconify text-white text-xl"
                 data-icon="mdi:magnify-scan"
               ></span>
             </div>
-            <h3 class="text-lg font-bold text-br-50 mb-2">Grading & Sortasi</h3>
-            <p class="text-sm text-warm-muted font-light leading-relaxed">
+            <h3 class="text-lg font-bold text-br-800 mb-2">
+              Grading & Sortasi
+            </h3>
+            <p class="text-sm text-br-400 font-light leading-relaxed">
               Sorting mesin dan hand-pick untuk konsistensi ukuran dan kualitas.
             </p>
           </div>
           <div
-            class="glass glass-hover rounded-2xl p-6 relative scroll-reveal group"
+            class="bg-white border-2 border-lv-100 rounded-2xl p-6 relative hover:border-lv-300 hover:shadow-lg transition-all group process-step"
           >
             <div
-              class="absolute top-6 right-6 text-5xl font-extrabold text-lv-900"
+              class="absolute top-6 right-6 text-5xl font-extrabold text-lv-50"
             >
               04
             </div>
             <div
-              class="w-12 h-12 rounded-xl bg-lv-600 flex items-center justify-center mb-5 group-hover:bg-lv-500 transition-colors"
+              class="w-12 h-12 rounded-xl bg-lv-800 flex items-center justify-center mb-5 group-hover:bg-lv-600 transition-colors"
             >
               <span
                 class="iconify text-white text-xl"
                 data-icon="mdi:package-variant-closed"
               ></span>
             </div>
-            <h3 class="text-lg font-bold text-br-50 mb-2">
+            <h3 class="text-lg font-bold text-br-800 mb-2">
               Pengemasan & Kirim
             </h3>
-            <p class="text-sm text-warm-muted font-light leading-relaxed">
-              Karung goni 60kg branding CoffeeBoss. Siap ekspor via Tanjung
-              Priok.
+            <p class="text-sm text-br-400 font-light leading-relaxed">
+              Karung goni 60kg branding CoffeeBoss. Siap ekspor.
             </p>
           </div>
         </div>
-        <div class="mt-12 grid md:grid-cols-3 gap-6 scroll-reveal">
-          <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+        <div class="mt-12 grid md:grid-cols-3 gap-6" data-stagger="0.1">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
             <img
               src="https://picsum.photos/seed/coffeeboss-picking/500/375.jpg"
               alt="Panen"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
             <img
               src="https://picsum.photos/seed/coffeeboss-processing/500/375.jpg"
               alt="Pengolahan"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
-          <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+          <div class="rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
             <img
               src="https://picsum.photos/seed/coffeeboss-packing/500/375.jpg"
               alt="Pengemasan"
@@ -1379,109 +1124,93 @@
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
-
-    <!-- Stats -->
-    <section class="py-24 px-6">
+    <!-- ==================== STATS BAR (coklat tua) ==================== -->
+    <section class="py-16 px-6 bg-br-800 border-y-2 border-br-600">
       <div class="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
-        <div
-          class="stat-card glass glass-hover rounded-2xl p-8 text-center scroll-reveal"
-        >
+        <div class="text-center" data-animate>
           <div
-            class="text-4xl md:text-5xl font-extrabold text-grad-brown mb-2"
-            data-count="500"
+            class="text-4xl md:text-5xl font-extrabold text-br-100 mb-2"
+            data-counter="500"
           >
             0
           </div>
           <div
-            class="text-xs text-brown-accent font-semibold uppercase tracking-wider"
+            class="text-xs text-br-300 font-semibold uppercase tracking-wider"
           >
             Ton Per Tahun
           </div>
-          <div class="text-xs text-warm-dim mt-1">Kapasitas supply</div>
         </div>
-        <div
-          class="stat-card glass glass-hover rounded-2xl p-8 text-center scroll-reveal"
-        >
+        <div class="text-center" data-animate>
           <div
-            class="text-4xl md:text-5xl font-extrabold text-grad-green mb-2"
-            data-count="500"
+            class="text-4xl md:text-5xl font-extrabold text-lv-300 mb-2"
+            data-counter="500"
           >
             0
           </div>
           <div
-            class="text-xs text-green-accent font-semibold uppercase tracking-wider"
+            class="text-xs text-lv-300 font-semibold uppercase tracking-wider"
           >
             Petani Mitra
           </div>
-          <div class="text-xs text-warm-dim mt-1">Langsung dari kebun</div>
         </div>
-        <div
-          class="stat-card glass glass-hover rounded-2xl p-8 text-center scroll-reveal"
-        >
+        <div class="text-center" data-animate>
           <div
-            class="text-4xl md:text-5xl font-extrabold text-grad-brown mb-2"
-            data-count="15"
+            class="text-4xl md:text-5xl font-extrabold text-br-100 mb-2"
+            data-counter="15"
           >
             0
           </div>
           <div
-            class="text-xs text-brown-accent font-semibold uppercase tracking-wider"
+            class="text-xs text-br-300 font-semibold uppercase tracking-wider"
           >
             Negara Ekspor
           </div>
-          <div class="text-xs text-warm-dim mt-1">Asia, Eropa, Amerika</div>
         </div>
-        <div
-          class="stat-card glass glass-hover rounded-2xl p-8 text-center scroll-reveal"
-        >
+        <div class="text-center" data-animate>
           <div
-            class="text-4xl md:text-5xl font-extrabold text-grad-green mb-2"
-            data-count="7"
+            class="text-4xl md:text-5xl font-extrabold text-lv-300 mb-2"
+            data-counter="7"
           >
             0
           </div>
           <div
-            class="text-xs text-green-accent font-semibold uppercase tracking-wider"
+            class="text-xs text-lv-300 font-semibold uppercase tracking-wider"
           >
             Tahun Pengalaman
           </div>
-          <div class="text-xs text-warm-dim mt-1">Sejak 2018</div>
         </div>
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
-
-    <!-- Instagram -->
-    <section class="py-24 px-6 bg-section-alt">
+    <!-- ==================== INSTAGRAM (putih) ==================== -->
+    <section class="py-24 px-6 bg-white">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center max-w-2xl mx-auto mb-16 scroll-reveal">
+        <div class="text-center max-w-2xl mx-auto mb-16" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-br-700 bg-br-800/50 mb-6"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-br-50 border-2 border-br-200 mb-6"
           >
-            <span class="iconify text-br-300" data-icon="mdi:instagram"></span
-            ><span
-              class="text-xs font-semibold text-br-300 tracking-wide uppercase"
+            <span class="iconify text-br-600" data-icon="mdi:instagram"></span
+            ><span class="text-xs font-bold text-br-600 tracking-wide uppercase"
               >@coffeebosindonesia</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm mb-4"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800 mb-4"
           >
             Ikuti Kami di Instagram
           </h2>
-          <p class="text-warm-muted font-light">
+          <p class="text-br-400 font-light">
             Update terbaru dari kebun, gudang, dan kegiatan ekspor kami
           </p>
         </div>
         <div
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 scroll-reveal"
+          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3"
+          data-stagger="0.06"
         >
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig1/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1489,14 +1218,14 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig2/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1504,14 +1233,14 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig3/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1519,14 +1248,14 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig4/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1534,14 +1263,14 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig5/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1549,14 +1278,14 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
-            class="rounded-2xl overflow-hidden aspect-square relative group"
+            class="rounded-2xl overflow-hidden aspect-square relative group shadow-md ig-item"
             ><img
               src="https://picsum.photos/seed/cb-ig6/400/400.jpg"
               class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
@@ -1564,16 +1293,17 @@
               class="ig-overlay absolute inset-0 flex items-center justify-center"
             >
               <span
-                class="iconify text-br-50 text-2xl opacity-0 group-hover:opacity-100 transition-opacity"
+                class="iconify text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 data-icon="mdi:instagram"
               ></span></div
           ></a>
         </div>
-        <div class="text-center mt-8">
+        <div class="text-center mt-8" data-animate>
           <a
             href="https://instagram.com/coffeebosindonesia"
             target="_blank"
             class="btn-outline px-6 py-3 rounded-xl text-sm font-semibold inline-flex items-center gap-2"
+            data-magnetic
             ><span class="iconify" data-icon="mdi:instagram"></span>Follow
             @coffeebosindonesia</a
           >
@@ -1581,172 +1311,174 @@
       </div>
     </section>
 
-    <div class="divider-warm max-w-7xl mx-auto"></div>
+    <div class="divider-accent"></div>
 
-    <!-- Contact -->
-    <section id="contact" class="py-24 px-6">
+    <!-- ==================== CONTACT (putih) ==================== -->
+    <section id="contact" class="py-24 px-6 bg-white">
       <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
-        <div class="scroll-reveal space-y-8">
+        <div class="space-y-8" data-animate>
           <div
-            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-lv-800 bg-lv-900/30"
+            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-lv-50 border-2 border-lv-200"
           >
-            <span
-              class="text-xs font-semibold text-lv-400 tracking-wide uppercase"
+            <span class="text-xs font-bold text-lv-800 tracking-wide uppercase"
               >Hubungi Kami</span
             >
           </div>
           <h2
-            class="text-3xl md:text-5xl font-extrabold tracking-tight text-grad-warm"
+            class="text-3xl md:text-5xl font-extrabold tracking-tight text-br-800"
           >
             Siap Menjadi<br />Supplier Anda
           </h2>
-          <p class="text-warm-muted font-light leading-relaxed max-w-lg">
+          <p class="text-br-500 font-light leading-relaxed max-w-lg">
             Baik Anda roaster lokal, importer, atau buyer internasional — kami
             siap memenuhi kebutuhan green coffee beans Anda.
           </p>
           <div class="space-y-5">
             <div class="flex items-start gap-4">
               <div
-                class="w-12 h-12 rounded-xl bg-lv-900/50 flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-lv-800 flex items-center justify-center flex-shrink-0"
               >
                 <span
-                  class="iconify text-lv-400 text-xl"
+                  class="iconify text-white text-xl"
                   data-icon="mdi:whatsapp"
                 ></span>
               </div>
               <div>
-                <div class="text-sm font-bold text-br-50">WhatsApp</div>
+                <div class="text-sm font-bold text-br-800">WhatsApp</div>
                 <a
                   href="https://wa.me/6281234567890"
-                  class="text-sm text-brown-accent hover:text-br-200 transition-colors"
+                  class="text-sm text-br-400 hover:text-br-600 transition-colors font-medium"
                   >+62 812-3456-7890</a
                 >
               </div>
             </div>
             <div class="flex items-start gap-4">
               <div
-                class="w-12 h-12 rounded-xl bg-br-800/50 flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-br-800 flex items-center justify-center flex-shrink-0"
               >
                 <span
-                  class="iconify text-br-300 text-xl"
+                  class="iconify text-white text-xl"
                   data-icon="mdi:instagram"
                 ></span>
               </div>
               <div>
-                <div class="text-sm font-bold text-br-50">Instagram</div>
+                <div class="text-sm font-bold text-br-800">Instagram</div>
                 <a
                   href="https://instagram.com/coffeebosindonesia"
                   target="_blank"
-                  class="text-sm text-brown-accent hover:text-br-200 transition-colors"
+                  class="text-sm text-br-400 hover:text-br-600 transition-colors font-medium"
                   >@coffeebosindonesia</a
                 >
               </div>
             </div>
             <div class="flex items-start gap-4">
               <div
-                class="w-12 h-12 rounded-xl bg-lv-900/50 flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-lv-800 flex items-center justify-center flex-shrink-0"
               >
                 <span
-                  class="iconify text-lv-400 text-xl"
+                  class="iconify text-white text-xl"
                   data-icon="mdi:email-outline"
                 ></span>
               </div>
               <div>
-                <div class="text-sm font-bold text-br-50">Email</div>
+                <div class="text-sm font-bold text-br-800">Email</div>
                 <a
                   href="mailto:info@coffeebosindonesia.com"
-                  class="text-sm text-brown-accent hover:text-br-200 transition-colors"
+                  class="text-sm text-br-400 hover:text-br-600 transition-colors font-medium"
                   >info@coffeebosindonesia.com</a
                 >
               </div>
             </div>
             <div class="flex items-start gap-4">
               <div
-                class="w-12 h-12 rounded-xl bg-br-800/50 flex items-center justify-center flex-shrink-0"
+                class="w-12 h-12 rounded-xl bg-br-800 flex items-center justify-center flex-shrink-0"
               >
                 <span
-                  class="iconify text-br-300 text-xl"
+                  class="iconify text-white text-xl"
                   data-icon="mdi:map-marker-outline"
                 ></span>
               </div>
               <div>
-                <div class="text-sm font-bold text-br-50">Alamat</div>
-                <div class="text-sm text-warm-muted">
+                <div class="text-sm font-bold text-br-800">Alamat</div>
+                <div class="text-sm text-br-400">
                   Temanggung, Jawa Tengah, Indonesia
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="scroll-reveal">
-          <div class="glass rounded-3xl p-8 space-y-5">
-            <h3 class="text-xl font-bold text-br-50">Kirim Pesan</h3>
+        <div data-animate>
+          <div
+            class="bg-white border-2 border-br-100 rounded-3xl p-8 space-y-5 shadow-lg"
+          >
+            <h3 class="text-xl font-bold text-br-800">Kirim Pesan</h3>
             <form id="contactForm" class="space-y-4">
               <div>
-                <label class="text-xs text-warm-dim font-semibold mb-1.5 block"
+                <label class="text-xs text-br-600 font-bold mb-1.5 block"
                   >Nama Lengkap</label
                 ><input
                   type="text"
                   id="formName"
                   placeholder="Masukkan nama Anda"
-                  class="w-full bg-br-900/60 border border-br-700 rounded-xl px-4 py-3 text-sm text-br-50 placeholder:text-br-600 focus:outline-none focus:border-br-400 focus:ring-1 focus:ring-br-400/20 transition-all"
+                  class="form-input w-full border-2 border-br-100 rounded-xl px-4 py-3 text-sm text-br-800 placeholder:text-br-200 focus:outline-none focus:border-br-400 transition-all"
                 />
               </div>
               <div>
-                <label class="text-xs text-warm-dim font-semibold mb-1.5 block"
+                <label class="text-xs text-br-600 font-bold mb-1.5 block"
                   >Email</label
                 ><input
                   type="email"
                   id="formEmail"
                   placeholder="email@perusahaan.com"
-                  class="w-full bg-br-900/60 border border-br-700 rounded-xl px-4 py-3 text-sm text-br-50 placeholder:text-br-600 focus:outline-none focus:border-br-400 focus:ring-1 focus:ring-br-400/20 transition-all"
+                  class="form-input w-full border-2 border-br-100 rounded-xl px-4 py-3 text-sm text-br-800 placeholder:text-br-200 focus:outline-none focus:border-br-400 transition-all"
                 />
               </div>
               <div>
-                <label class="text-xs text-warm-dim font-semibold mb-1.5 block"
+                <label class="text-xs text-br-600 font-bold mb-1.5 block"
                   >Negara / Kota</label
                 ><input
                   type="text"
                   id="formLocation"
                   placeholder="Jakarta, Indonesia"
-                  class="w-full bg-br-900/60 border border-br-700 rounded-xl px-4 py-3 text-sm text-br-50 placeholder:text-br-600 focus:outline-none focus:border-br-400 focus:ring-1 focus:ring-br-400/20 transition-all"
+                  class="form-input w-full border-2 border-br-100 rounded-xl px-4 py-3 text-sm text-br-800 placeholder:text-br-200 focus:outline-none focus:border-br-400 transition-all"
                 />
               </div>
               <div>
-                <label class="text-xs text-warm-dim font-semibold mb-1.5 block"
-                  >Produk yang Diminati</label
+                <label class="text-xs text-br-600 font-bold mb-1.5 block"
+                  >Produk</label
                 >
                 <select
                   id="formProduct"
-                  class="w-full bg-br-900/60 border border-br-700 rounded-xl px-4 py-3 text-sm text-br-300 focus:outline-none focus:border-br-400 focus:ring-1 focus:ring-br-400/20 transition-all appearance-none"
+                  class="form-input w-full border-2 border-br-100 rounded-xl px-4 py-3 text-sm text-br-400 focus:outline-none focus:border-br-400 transition-all appearance-none"
                   style="
-                    background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%238b5a1e' d='M6 8L1 3h10z'/%3E%3C/svg%3E&quot;);
+                    background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%232d1a08' d='M6 8L1 3h10z'/%3E%3C/svg%3E&quot;);
                     background-repeat: no-repeat;
                     background-position: right 16px center;
                   "
                 >
                   <option value="">Pilih produk...</option>
-                  <option value="arabica-specialty">Arabica Specialty</option>
-                  <option value="arabica-grade1">Arabica Grade I</option>
-                  <option value="arabica-grade2">Arabica Grade II</option>
-                  <option value="robusta-grade1">Robusta Grade I</option>
-                  <option value="robusta-grade2">Robusta Grade II</option>
-                  <option value="custom">Custom Order</option>
+                  <option>Arabica Specialty</option>
+                  <option>Arabica Grade I</option>
+                  <option>Arabica Grade II</option>
+                  <option>Robusta Grade I</option>
+                  <option>Robusta Grade II</option>
+                  <option>Custom Order</option>
                 </select>
               </div>
               <div>
-                <label class="text-xs text-warm-dim font-semibold mb-1.5 block"
+                <label class="text-xs text-br-600 font-bold mb-1.5 block"
                   >Pesan</label
                 ><textarea
                   id="formMessage"
                   rows="3"
                   placeholder="Jelaskan kebutuhan Anda..."
-                  class="w-full bg-br-900/60 border border-br-700 rounded-xl px-4 py-3 text-sm text-br-50 placeholder:text-br-600 focus:outline-none focus:border-br-400 focus:ring-1 focus:ring-br-400/20 transition-all resize-none"
+                  class="form-input w-full border-2 border-br-100 rounded-xl px-4 py-3 text-sm text-br-800 placeholder:text-br-200 focus:outline-none focus:border-br-400 transition-all resize-none"
                 ></textarea>
               </div>
               <button
                 type="submit"
                 class="w-full btn-brown px-6 py-3.5 rounded-xl text-sm font-semibold flex items-center justify-center gap-2"
+                data-magnetic
               >
                 <span class="iconify" data-icon="mdi:send"></span>Kirim Pesan
               </button>
@@ -1756,27 +1488,30 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-16 px-6">
-      <div class="max-w-5xl mx-auto scroll-reveal">
-        <div class="relative rounded-3xl overflow-hidden">
+    <!-- ==================== CTA (coklat tua) ==================== -->
+    <section class="py-16 px-6 bg-br-800">
+      <div class="max-w-5xl mx-auto" data-animate>
+        <div
+          class="relative rounded-3xl overflow-hidden shadow-2xl"
+          data-parallax="0.08"
+        >
           <img
             src="https://picsum.photos/seed/coffeeboss-cta-sacks/1200/400.jpg"
             class="w-full h-full object-cover absolute inset-0"
           />
           <div
-            class="absolute inset-0 bg-gradient-to-r from-br-950/95 via-br-900/80 to-br-900/50"
+            class="absolute inset-0 bg-gradient-to-r from-br-950/95 via-br-900/85 to-br-900/50"
           ></div>
           <div
             class="relative z-10 p-10 md:p-16 flex flex-col md:flex-row items-center gap-8"
           >
             <div class="flex-1">
               <h2
-                class="text-3xl md:text-4xl font-extrabold text-br-50 tracking-tight mb-3"
+                class="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-3"
               >
                 Mulai Bermitra dengan CoffeeBoss
               </h2>
-              <p class="text-warm-muted font-light">
+              <p class="text-br-200 font-light">
                 Dapatkan penawaran terbaik. Respons cepat dalam 24 jam.
               </p>
             </div>
@@ -1784,6 +1519,7 @@
               href="https://wa.me/6281234567890?text=Halo%20CoffeeBoss,%20saya%20tertarik%20bermitra"
               target="_blank"
               class="btn-green px-8 py-4 rounded-xl text-sm font-semibold flex items-center gap-2 flex-shrink-0"
+              data-magnetic
               ><span class="iconify text-lg" data-icon="mdi:whatsapp"></span
               >Chat WhatsApp</a
             >
@@ -1792,29 +1528,29 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-br-800/50 py-16 px-6">
+    <!-- ==================== FOOTER (coklat tua) ==================== -->
+    <footer class="footer-dark py-16 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div class="space-y-4">
-            <a href="#" class="flex items-center gap-3">
-              <div
-                class="w-10 h-10 rounded-xl bg-gradient-to-br from-br-400 to-br-600 flex items-center justify-center"
+            <a href="#" class="flex items-center gap-3"
+              ><div
+                class="w-9 h-9 rounded-lg bg-lv-600 flex items-center justify-center"
               >
                 <span
-                  class="iconify text-white text-xl"
+                  class="iconify text-white text-lg"
                   data-icon="mdi:coffee"
                 ></span>
               </div>
               <div>
-                <span class="text-lg font-bold text-br-50">CoffeeBoss</span
+                <span class="text-base font-bold text-white">CoffeeBoss</span
                 ><span
-                  class="block text-[10px] font-semibold text-lv-400 tracking-widest uppercase -mt-0.5"
+                  class="block text-[9px] font-semibold text-lv-400 tracking-widest uppercase -mt-0.5"
                   >Indonesia</span
                 >
-              </div>
-            </a>
-            <p class="text-sm text-warm-dim font-light leading-relaxed">
+              </div></a
+            >
+            <p class="text-sm text-br-300/50 font-light leading-relaxed">
               Supplier & Exportir Green Coffee Beans dari Temanggung, Jawa
               Tengah.
             </p>
@@ -1822,18 +1558,18 @@
               <a
                 href="https://instagram.com/coffeebosindonesia"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass flex items-center justify-center text-warm-dim hover:text-brown-accent hover:border-br-600 transition-all"
+                class="w-9 h-9 rounded-lg bg-br-700/50 flex items-center justify-center text-br-200 hover:bg-br-600 hover:text-white transition-all"
                 ><span class="iconify text-lg" data-icon="mdi:instagram"></span
               ></a>
               <a
                 href="https://wa.me/6281234567890"
                 target="_blank"
-                class="w-10 h-10 rounded-xl glass flex items-center justify-center text-warm-dim hover:text-green-accent hover:border-lv-700 transition-all"
+                class="w-9 h-9 rounded-lg bg-lv-900/50 flex items-center justify-center text-lv-300 hover:bg-lv-700 hover:text-white transition-all"
                 ><span class="iconify text-lg" data-icon="mdi:whatsapp"></span
               ></a>
               <a
                 href="mailto:info@coffeebosindonesia.com"
-                class="w-10 h-10 rounded-xl glass flex items-center justify-center text-warm-dim hover:text-green-accent hover:border-lv-700 transition-all"
+                class="w-9 h-9 rounded-lg bg-lv-900/50 flex items-center justify-center text-lv-300 hover:bg-lv-700 hover:text-white transition-all"
                 ><span
                   class="iconify text-lg"
                   data-icon="mdi:email-outline"
@@ -1842,105 +1578,107 @@
             </div>
           </div>
           <div>
-            <h4 class="text-sm font-bold text-br-50 mb-4">Produk</h4>
+            <h4 class="text-sm font-bold text-white mb-4">Produk</h4>
             <ul class="space-y-3">
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Arabica Specialty</a
                 >
               </li>
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Arabica Grade I</a
                 >
               </li>
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Arabica Grade II</a
                 >
               </li>
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Robusta Grade I</a
                 >
               </li>
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Robusta Grade II</a
                 >
               </li>
               <li>
                 <a
                   href="#products"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Custom Order</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <h4 class="text-sm font-bold text-br-50 mb-4">Perusahaan</h4>
+            <h4 class="text-sm font-bold text-white mb-4">Perusahaan</h4>
             <ul class="space-y-3">
               <li>
                 <a
                   href="#about"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Tentang Kami</a
                 >
               </li>
               <li>
                 <a
                   href="#origin"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Asal Kopi</a
                 >
               </li>
               <li>
                 <a
                   href="#process"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Proses</a
                 >
               </li>
               <li>
                 <a
                   href="#contact"
-                  class="text-sm text-warm-dim hover:text-brown-accent transition-colors"
+                  class="text-sm text-br-300/50 hover:text-br-200 transition-colors"
                   >Kontak</a
                 >
               </li>
             </ul>
           </div>
           <div>
-            <h4 class="text-sm font-bold text-br-50 mb-4">Informasi</h4>
+            <h4 class="text-sm font-bold text-white mb-4">Informasi</h4>
             <ul class="space-y-3">
-              <li class="text-sm text-warm-dim">Kemasan: Karung Goni 60kg</li>
-              <li class="text-sm text-warm-dim">MC: 12-13%</li>
-              <li class="text-sm text-warm-dim">Min. Order: 1 Ton</li>
-              <li class="text-sm text-warm-dim">Pembayaran: DP 50%</li>
-              <li class="text-sm text-warm-dim">Incoterm: FOB / CIF</li>
+              <li class="text-sm text-br-300/50">Kemasan: Karung Goni 60kg</li>
+              <li class="text-sm text-br-300/50">MC: 12-13%</li>
+              <li class="text-sm text-br-300/50">Min. Order: 1 Ton</li>
+              <li class="text-sm text-br-300/50">Pembayaran: DP 50%</li>
+              <li class="text-sm text-br-300/50">Incoterm: FOB / CIF</li>
             </ul>
           </div>
         </div>
-        <div class="divider-warm mb-8"></div>
         <div
-          class="flex flex-col md:flex-row items-center justify-between gap-4"
+          class="border-t border-br-700 pt-8 flex flex-col md:flex-row items-center justify-between gap-4"
         >
-          <div class="text-xs text-warm-dim">
+          <div class="text-xs text-br-400/40">
             © 2025 CoffeeBoss Indonesia. All rights reserved.
           </div>
-          <div class="flex items-center gap-2 text-xs text-warm-dim">
-            <span class="iconify text-br-600" data-icon="mdi:map-marker"></span
+          <div class="flex items-center gap-2 text-xs text-br-400/40">
+            <span
+              class="iconify text-br-500/40"
+              data-icon="mdi:map-marker"
+            ></span
             >Temanggung, Jawa Tengah, Indonesia
           </div>
         </div>
@@ -1949,11 +1687,11 @@
 
     <!-- WA Float -->
     <a
-      href="https://wa.me/6281234567890?text=Halo%20CoffeeBoss,%20saya%20tertarik%20green%20coffee%20beans"
+      href="https://wa.me/6281234567890?text=Halo%20CoffeeBoss"
       target="_blank"
       id="waFloat"
-      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-lv-600 flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:bg-lv-500"
-      style="box-shadow: 0 4px 20px rgba(22, 163, 74, 0.35)"
+      class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-lv-700 flex items-center justify-center shadow-xl transition-all duration-300 hover:scale-110 hover:bg-lv-600"
+      style="box-shadow: 0 4px 20px rgba(20, 83, 45, 0.4)"
     >
       <span class="iconify text-white text-3xl" data-icon="mdi:whatsapp"></span>
     </a>
@@ -1961,132 +1699,25 @@
     <!-- Toast -->
     <div
       id="toast"
-      class="toast fixed bottom-24 right-6 z-50 glass rounded-2xl p-4 flex items-center gap-3 max-w-sm"
-      style="border-color: rgba(74, 222, 128, 0.2)"
+      class="toast fixed bottom-24 right-6 z-50 bg-white border-2 border-lv-200 rounded-2xl p-4 flex items-center gap-3 max-w-sm shadow-xl"
     >
       <div
-        class="w-10 h-10 rounded-xl bg-lv-900/50 flex items-center justify-center flex-shrink-0"
+        class="w-10 h-10 rounded-xl bg-lv-50 flex items-center justify-center flex-shrink-0"
       >
         <span
-          class="iconify text-lv-400 text-xl"
+          class="iconify text-lv-700 text-xl"
           data-icon="mdi:check-circle"
         ></span>
       </div>
       <div>
-        <div class="text-sm font-bold text-br-50">Pesan Terkirim!</div>
-        <div class="text-xs text-warm-dim">
+        <div class="text-sm font-bold text-br-800">Pesan Terkirim!</div>
+        <div class="text-xs text-br-400">
           Kami akan menghubungi Anda segera.
         </div>
       </div>
     </div>
 
-    <script>
-      const navbar = document.getElementById("navbar");
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          navbar.classList.add("nav-scroll", "py-2");
-          navbar.classList.remove("py-4");
-        } else {
-          navbar.classList.remove("nav-scroll", "py-2");
-          navbar.classList.add("py-4");
-        }
-      });
-      const mm = document.getElementById("mobileMenu");
-      document
-        .getElementById("menuToggle")
-        .addEventListener("click", () => mm.classList.add("open"));
-      document
-        .getElementById("menuClose")
-        .addEventListener("click", () => mm.classList.remove("open"));
-      document
-        .querySelectorAll(".mobile-link")
-        .forEach((l) =>
-          l.addEventListener("click", () => mm.classList.remove("open")),
-        );
-
-      const obs = new IntersectionObserver(
-        (e) => {
-          e.forEach((en) => {
-            if (en.isIntersecting) {
-              en.target.classList.add("visible");
-              const c = en.target.querySelector("[data-count]");
-              if (c) {
-                const t = +c.dataset.count;
-                let cur = 0;
-                const inc = t / 50;
-                const tm = setInterval(() => {
-                  cur += inc;
-                  if (cur >= t) {
-                    cur = t;
-                    clearInterval(tm);
-                  }
-                  c.textContent = Math.floor(cur) + "+";
-                }, 25);
-              }
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" },
-      );
-      document
-        .querySelectorAll(".scroll-reveal")
-        .forEach((el) => obs.observe(el));
-
-      document.querySelectorAll('a[href^="#"]').forEach((a) => {
-        a.addEventListener("click", function (e) {
-          e.preventDefault();
-          const t = document.querySelector(this.getAttribute("href"));
-          if (t) t.scrollIntoView({ behavior: "smooth", block: "start" });
-        });
-      });
-
-      document
-        .getElementById("contactForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const n = document.getElementById("formName").value.trim(),
-            em = document.getElementById("formEmail").value.trim(),
-            loc = document.getElementById("formLocation").value.trim(),
-            prod = document.getElementById("formProduct").value,
-            msg = document.getElementById("formMessage").value.trim();
-          if (!n || !em) {
-            if (!n)
-              document.getElementById("formName").style.borderColor = "#a06a2b";
-            if (!em)
-              document.getElementById("formEmail").style.borderColor =
-                "#a06a2b";
-            return;
-          }
-          document.getElementById("formName").style.borderColor = "";
-          document.getElementById("formEmail").style.borderColor = "";
-          let w = `Halo CoffeeBoss,%0A%0ANama: ${n}%0AEmail: ${em}`;
-          if (loc) w += `%0ALokasi: ${loc}`;
-          if (prod) w += `%0AProduk: ${prod}`;
-          if (msg) w += `%0APesan: ${msg}`;
-          const toast = document.getElementById("toast");
-          toast.classList.add("show");
-          setTimeout(() => toast.classList.remove("show"), 4000);
-          setTimeout(
-            () =>
-              window.open(`https://wa.me/6281234567890?text=${w}`, "_blank"),
-            500,
-          );
-          this.reset();
-        });
-      ["formName", "formEmail"].forEach((id) => {
-        document.getElementById(id).addEventListener("input", function () {
-          this.style.borderColor = "";
-        });
-      });
-
-      const wf = document.getElementById("waFloat");
-      wf.style.opacity = "0";
-      wf.style.pointerEvents = "none";
-      wf.style.transition = "all 300ms ease";
-      window.addEventListener("scroll", () => {
-        wf.style.opacity = window.scrollY > 300 ? "1" : "0";
-        wf.style.pointerEvents = window.scrollY > 300 ? "auto" : "none";
-      });
-    </script>
+    <!-- Custom Script -->
+    <script src="script.js"></script>
   </body>
 </html>
