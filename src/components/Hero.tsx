@@ -16,18 +16,10 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80"
-        className="absolute inset-0 h-full w-full object-cover max-md:hidden"
+        className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/images/hero-video.mp4" type="video/mp4" />
+        <source src="/images/vid1.mp4" type="video/mp4" />
       </video>
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1920&q=80')",
-        }}
-      />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6 text-center">

@@ -15,10 +15,11 @@ import {
 } from "lucide-react";
 
 const contactChannels = [
-  { icon: Phone, label: "WhatsApp", value: "+62 812-3456-7890", href: "https://wa.me/6281234567890" },
+  { icon: Phone, label: "WhatsApp", value: "+62 895-3056-5153", href: "https://wa.me/6289530565153" },
   { icon: Camera, label: "Instagram", value: "@coffeebosindonesia", href: "https://instagram.com/coffeebosindonesia" },
-  { icon: Mail, label: "Email", value: "info@coffeebosindonesia.com", href: "mailto:info@coffeebosindonesia.com" },
-  { icon: MapPin, label: "Location", value: "Temanggung, Central Java" },
+  { icon: Mail, label: "Email", value: "dianasamudraglobalpt@gmail.com", href: "mailto:dianasamudraglobalpt@gmail.com" },
+  { icon: Mail, label: "Marketing", value: "Marketing@coffeebosindonesia.com", href: "mailto:Marketing@coffeebosindonesia.com" },
+  { icon: MapPin, label: "Location", value: "Wonokerso, Kec. Pringsurat, Kab Temanggung, Jawa Tengah" },
 ];
 
 const formSchema = z.object({
@@ -60,7 +61,7 @@ export default function Contact() {
       .join("\n");
 
     window.open(
-      `https://wa.me/6281234567890?text=${encodeURIComponent(waText)}`,
+      `https://wa.me/6289530565153?text=${encodeURIComponent(waText)}`,
       "_blank"
     );
     setSubmitted(true);
@@ -181,9 +182,9 @@ export default function Contact() {
                     className="w-full rounded-lg border border-white/10 bg-surface p-3 text-sm text-white outline-none transition-colors placeholder:text-text-muted focus:border-gold"
                   >
                     <option value="" className="bg-surface">Produk yang Diminati *</option>
-                    <option value="Arabica Temanggung" className="bg-surface">Arabica Temanggung</option>
-                    <option value="Robusta Temanggung" className="bg-surface">Robusta Temanggung</option>
-                    <option value="Custom Request" className="bg-surface">Custom Request</option>
+                    <option value="Robusta Grade I" className="bg-surface">Robusta Grade I</option>
+                    <option value="Robusta Grade II" className="bg-surface">Robusta Grade II</option>
+                    <option value="Specialty Arabica" className="bg-surface">Specialty Arabica</option>
                   </select>
                   {errors.product && (
                     <p className="mt-1 text-xs text-red-400">{errors.product.message}</p>

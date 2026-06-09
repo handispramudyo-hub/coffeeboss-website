@@ -30,6 +30,9 @@ export default function Footer() {
               CoffeeBoss Indonesia — Supplier green coffee beans dari
               Temanggung, Jawa Tengah.
             </p>
+            <p className="mt-2 text-xs text-text-muted">
+              Wonokerso, Kec. Pringsurat, Kab Temanggung, Jawa Tengah
+            </p>
           </div>
 
           <div>
@@ -59,6 +62,8 @@ export default function Footer() {
               <li>Kemasan: 60 Kg Jute Bag</li>
               <li>MOQ: Menyesuaikan kebutuhan</li>
               <li>Pengiriman: Domestik &amp; Internasional</li>
+              <li>WhatsApp: +62 895-3056-5153</li>
+              <li>Email: dianasamudraglobalpt@gmail.com</li>
             </ul>
           </div>
         </div>

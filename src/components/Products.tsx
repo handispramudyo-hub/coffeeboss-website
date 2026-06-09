@@ -5,25 +5,22 @@ import { ArrowRight } from "lucide-react";
 
 const products = [
   {
-    name: "Arabica Temanggung",
-    desc: "Arabica yang tumbuh di dataran tinggi Temanggung dengan karakter rasa yang kompleks dan aroma yang khas.",
-    tags: ["Arabica", "Honey", "Natural", "Wet Hulling"],
-    image:
-      "https://images.unsplash.com/photo-1608023136031-c9e5e39fa49e?w=600&q=80",
+    name: "Robusta Grade I",
+    desc: "Central Java Temanggung. Process: Natural Washed. Altitude: 200–999 MASL. Shade plant: Avocado. Screen Size: 14–18. Moisture: 12–13%. Contact us for further information.",
+    tags: ["Natural Washed", "Altitude 200–999 MASL", "Shade: Avocado", "Screen 14–18", "Moisture 12–13%"],
+    image: "/images/Grade 1.jpg",
   },
   {
-    name: "Robusta Temanggung",
-    desc: "Robusta dengan body yang kuat dan cocok untuk kebutuhan blend maupun industri.",
-    tags: ["Robusta", "Full Body", "Commercial Use"],
-    image:
-      "https://images.unsplash.com/photo-1611854779393-1b2da9d4001c?w=600&q=80",
+    name: "Robusta Grade II",
+    desc: "Robusta coffee beans Grade II Central Java Temanggung dried with the fruit intact, resulting in a coffee with a strong and full-bodied flavor profile, characterized by its bitterness and earthy notes. Post Harvest: Dry Hulled. Elevation: 600–900 MASL. Shade Plant: Avocado, Banana, Papaya. Screen Size: 14–18. Moisture: 12–13%. Processing Time: 30 days.",
+    tags: ["Dry Hulled", "Elevation 600–900 MASL", "Shade: Avocado, Banana, Papaya", "Screen 14–18", "Moisture 12–13%", "Processing 30 Days"],
+    image: "/images/Grade 2.jpg",
   },
   {
-    name: "Custom Request",
-    desc: "Diskusikan kebutuhan spesifikasi kopi sesuai kebutuhan bisnis Anda.",
-    tags: ["Custom Grade", "Custom Packaging", "Flexible Quantity"],
-    image:
-      "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=600&q=80",
+    name: "Specialty Arabica",
+    desc: "Specialty Arabica Central Java Temanggung — Arabica coffee beans dried with the fruit intact, resulting in a coffee with a heavy body, low acidity, and a unique flavor profile. Process: Dry Hulled, Natural, Washed. Altitude: 1,200–1,500 MASL. Moisture: 12–13%. Screen size: 15–18. Contact us for further information.",
+    tags: ["Dry Hulled", "Natural", "Washed", "Altitude 1,200–1,500 MASL", "Moisture 12–13%", "Screen 15–18"],
+    image: "/images/Speciality Arabica.jpg",
   },
 ];
 
