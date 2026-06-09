@@ -47,7 +47,7 @@ export default function Products() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
@@ -57,19 +57,19 @@ export default function Products() {
               transition={{ duration: 0.5, delay: i * 0.15 }}
               className="group card overflow-hidden p-0"
             >
-              <div className="img-placeholder h-52">
+              <div className="img-placeholder h-44 sm:h-52">
                 <img
                   src={product.image}
                   alt={product.name}
                   loading="lazy"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="mb-3 text-xl font-semibold">{product.name}</h3>
-                <p className="mb-4 text-sm leading-relaxed text-text-muted">
+              <div className="p-5 sm:p-6">
+                <h3 className="mb-3 text-lg font-semibold sm:text-xl">{product.name}</h3>
+                <p className="mb-4 text-xs leading-relaxed text-text-muted sm:text-sm">
                   {product.desc}
                 </p>
-                <div className="mb-5 flex flex-wrap gap-2">
+                <div className="mb-5 flex flex-wrap gap-1.5 sm:gap-2">
                   {product.tags.map((tag) => (
                     <span key={tag} className="tag">
                       {tag}

@@ -31,12 +31,12 @@ export default function Hero() {
           <span className="mb-3 inline-block text-[10px] font-medium uppercase tracking-[0.25em] text-gold sm:text-xs sm:tracking-[0.3em]">
             Supplier & Exportir Kopi Indonesia
           </span>
-          <h1 className="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
+          <h1 className="mb-5 text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-6xl lg:text-7xl">
             Green Coffee Beans
             <br />
             <span className="text-gold">from Temanggung</span>
           </h1>
-          <p className="mx-auto mb-8 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base md:text-lg">
+          <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-text-muted sm:text-base md:text-lg">
             Supplying selected Arabica and Robusta coffee beans sourced from the
             highlands of Temanggung, Central Java.
           </p>

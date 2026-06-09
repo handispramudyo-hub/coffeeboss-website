@@ -62,13 +62,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            onClick={(e) => handleNavClick(e, "#contact")}
-            className="btn-primary text-sm"
-          >
-            Request Quote
-          </a>
         </div>
 
         <button
@@ -99,13 +92,6 @@ export default function Navbar() {
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={(e) => handleNavClick(e, "#contact")}
-                className="btn-primary mt-2 w-fit text-sm"
-              >
-                Request Quote
-              </a>
             </div>
           </motion.div>
         )}

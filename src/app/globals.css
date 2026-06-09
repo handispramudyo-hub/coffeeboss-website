@@ -88,9 +88,15 @@
   }
 
   .section-heading {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
     line-height: 1.2;
+  }
+
+  @media (min-width: 640px) {
+    .section-heading {
+      font-size: 2.25rem;
+    }
   }
 
   @media (min-width: 768px) {
@@ -101,9 +107,15 @@
 
   .section-subtitle {
     color: var(--color-text-muted);
-    font-size: 1.125rem;
+    font-size: 1rem;
     max-width: 36rem;
     line-height: 1.7;
+  }
+
+  @media (min-width: 640px) {
+    .section-subtitle {
+      font-size: 1.125rem;
+    }
   }
 
   .glass {
@@ -145,8 +157,14 @@
     background: var(--color-surface-light);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1.25rem;
     transition: all 0.3s ease;
+  }
+
+  @media (min-width: 640px) {
+    .card {
+      padding: 1.5rem;
+    }
   }
 
   .card:hover {

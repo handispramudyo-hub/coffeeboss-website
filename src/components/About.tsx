@@ -50,7 +50,7 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {highlights.map((item, i) => {
             const Icon = item.icon;
             return (
