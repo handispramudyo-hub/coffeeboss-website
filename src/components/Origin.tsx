@@ -59,7 +59,7 @@ export default function Origin() {
             className="img-placeholder h-[400px] rounded-xl lg:h-[500px]"
           >
             <img
-              src="https://images.unsplash.com/photo-1539059826-c5a9d7d5cd2c?w=800&q=80"
+              src="/images/tmg.jpeg"
               alt="Temanggung coffee highlands"
               className="h-full w-full object-cover"
               loading="lazy"

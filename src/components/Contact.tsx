@@ -185,6 +185,7 @@ export default function Contact() {
                     <option value="Robusta Grade I" className="bg-surface">Robusta Grade I</option>
                     <option value="Robusta Grade II" className="bg-surface">Robusta Grade II</option>
                     <option value="Specialty Arabica" className="bg-surface">Specialty Arabica</option>
+                    <option value="Robusta Cherry Red Pick" className="bg-surface">Robusta Cherry Red Pick</option>
                   </select>
                   {errors.product && (
                     <p className="mt-1 text-xs text-red-400">{errors.product.message}</p>

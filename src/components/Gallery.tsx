@@ -2,31 +2,9 @@
 
 import { motion } from "framer-motion";
 
-const images = [
-  {
-    src: "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=500&q=80",
-    alt: "Kebun kopi",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1611854779393-1b2da9d4001c?w=500&q=80",
-    alt: "Green beans",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=500&q=80",
-    alt: "Proses panen",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1608023136031-c9e5e39fa49e?w=500&q=80",
-    alt: "Sortasi kopi",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=500&q=80",
-    alt: "Pengemasan",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1504630083234-14187a9df0f5?w=500&q=80",
-    alt: "Kopi specialty",
-  },
+const videos = [
+  { src: "/images/vid2.mp4", alt: "Proses sortasi kopi" },
+  { src: "/images/vid3.mp4", alt: "Pengemasan kopi" },
 ];
 
 export default function Gallery() {
@@ -49,22 +27,26 @@ export default function Gallery() {
           </p>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
-          {images.map((img, i) => (
+        <div className="grid gap-6 sm:grid-cols-2">
+          {videos.map((vid, i) => (
             <motion.div
-              key={img.alt}
+              key={vid.src}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
-              className="img-placeholder aspect-square overflow-hidden rounded-lg"
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className="overflow-hidden rounded-lg"
             >
-              <img
-                src={img.src}
-                alt={img.alt}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
                 className="h-full w-full object-cover"
-                loading="lazy"
-              />
+              >
+                <source src={vid.src} type="video/mp4" />
+              </video>
             </motion.div>
           ))}
         </div>

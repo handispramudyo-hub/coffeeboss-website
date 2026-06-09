@@ -22,6 +22,12 @@ const products = [
     tags: ["Dry Hulled", "Natural", "Washed", "Altitude 1,200–1,500 MASL", "Moisture 12–13%", "Screen 15–18"],
     image: "/images/Speciality Arabica.jpg",
   },
+  {
+    name: "Robusta Cherry Red Pick",
+    desc: "Robusta Cherry Red Pick – Origin Temanggung. Sourced directly from our partnered farmers in Temanggung, these robusta cherries are handpicked only at peak ripeness. Each batch is carefully selected to ensure top quality—resulting in a bold flavor profile with distinctive earthy aroma.",
+    tags: ["Cherry Red Pick", "Handpicked", "Peak Ripeness", "Bold Flavor", "Earthy Aroma"],
+    image: "/images/redcherry.jpeg",
+  },
 ];
 
 export default function Products() {
@@ -41,7 +47,7 @@ export default function Products() {
           </h2>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {products.map((product, i) => (
             <motion.div
               key={product.name}
