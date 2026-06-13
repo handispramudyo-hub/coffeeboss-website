@@ -1,24 +1,33 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const scrollTo = (id: string) => {
     const el = document.querySelector(id);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleError = () => {
+    if (videoRef.current) videoRef.current.style.display = "none";
+  };
+
   return (
-    <section id="home" className="relative flex min-h-dvh items-center overflow-hidden">
+    <section id="home" className="relative flex min-h-dvh items-center overflow-hidden bg-surface">
       <video
+        ref={videoRef}
         autoPlay
         muted
         loop
         playsInline
         preload="auto"
+        poster="/images/tmg.jpeg"
+        onError={handleError}
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/images/vid1.MOV" type="video/quicktime" />
+        <source src="/images/vid1.MOV" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 
