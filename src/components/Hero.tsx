@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -14,6 +14,16 @@ export default function Hero() {
     if (videoRef.current) videoRef.current.style.display = "none";
   };
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const play = () => video.play().catch(() => {});
+    video.load();
+    play();
+    document.addEventListener("touchstart", play, { once: true });
+    return () => document.removeEventListener("touchstart", play);
+  }, []);
+
   return (
     <section id="home" className="relative flex min-h-dvh items-center overflow-hidden bg-surface">
       <video
@@ -23,7 +33,6 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster="/images/tmg.jpeg"
         onError={handleError}
         className="absolute inset-0 h-full w-full object-cover"
       >
