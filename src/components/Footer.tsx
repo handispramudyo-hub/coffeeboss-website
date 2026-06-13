@@ -31,7 +31,7 @@ export default function Footer() {
               Temanggung, Jawa Tengah.
             </p>
             <p className="mt-2 text-xs text-text-muted">
-              Jl. Jatirunggo RT 04/01, Kec. Pringapus, Kab Semarang
+              Jl. Jatirunggo Pringapus, Kec. Pringapus, Kabupaten Semarang, Jawa Tengah 50214
             </p>
           </div>
 

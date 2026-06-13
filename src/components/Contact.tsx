@@ -18,7 +18,7 @@ const contactChannels = [
   { icon: Phone, label: "WhatsApp", value: "+62 813-3825-6185", href: "https://wa.me/6281338256185" },
   { icon: Camera, label: "Instagram", value: "@coffeebosindonesia", href: "https://instagram.com/coffeebosindonesia" },
   { icon: Mail, label: "Email", value: "dianasamudraglobalpt@gmail.com", href: "mailto:dianasamudraglobalpt@gmail.com" },
-  { icon: MapPin, label: "Location", value: "Jl. Jatirunggo RT 04/01 Kec Pringapus Kab Semarang", href: "https://maps.google.com/?q=Jl.+Jatirunggo+RT+04%2F01+Kec+Pringapus+Kab+Semarang" },
+  { icon: MapPin, label: "Location", value: "Jl. Jatirunggo Pringapus, Krajan, Jatirunggo, Kec. Pringapus, Kabupaten Semarang, Jawa Tengah 50214", href: "https://maps.app.goo.gl/6jKUmbFAYLLWwpJq5" },
 ];
 
 const formSchema = z.object({
