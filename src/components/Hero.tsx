@@ -18,7 +18,7 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/images/vid1.mp4" type="video/mp4" />
+        <source src="/images/vid1.MOV" type="video/quicktime" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/80" />
 

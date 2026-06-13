@@ -8,39 +8,44 @@
 
 ```bash
 npm run dev      # dev server on localhost:3000
-npm run build    # production build
+npm run build    # production build  → static export (out/)
 npm start        # serve production build
 npm run lint     # next lint
 ```
 
-## Structure
-
-```
-src/
-  app/
-    layout.tsx       # root layout, metadata, global CSS import
-    page.tsx         # landing page — orders all sections
-    globals.css      # Tailwind v4 + custom theme (--color-gold, --color-primary, etc.)
-  components/
-    Navbar.tsx        # sticky glassmorphism nav, mobile hamburger
-    Hero.tsx          # full-screen hero with CTA buttons
-    About.tsx         # 4 highlight cards
-    Products.tsx      # 3 product cards with image + tags
-    Origin.tsx        # left copy + right image, 4 info cards
-    Process.tsx       # 4-step numbered cards
-    WhyUs.tsx         # 4 reason cards
-    Gallery.tsx       # 6-image grid
-    Contact.tsx       # contact channels + react-hook-form (Zod validated) → WhatsApp
-    Footer.tsx        # 3-col footer
-    WhatsAppButton.tsx # floating WA button on scroll
-```
-
 ## Key facts
 
-- **All images are Unsplash placeholders.** Replace with real photos in `public/images/`.
-- **Contact form has no backend.** On submit, it builds a WhatsApp message URL and opens `wa.me/6281234567890` in a new tab.
-- **Color palette** (custom Tailwind v4 theme in `globals.css`): `gold` (#C89B15), `primary` (#4A2C1D), `surface` (#121212), `text-muted` (#AFAFAF).
-- **Language is Indonesian (`id`).** All copy in pages and components is in Bahasa Indonesia.
-- **Image assets go in `public/images/`.** Reference as `/images/your-file.jpg`.
-- **`"use client"`** in all components using hooks or browser APIs.
-- **Tailwind v4 uses `@import "tailwindcss"`** in globals.css and `@theme` for custom values — not the v3 `@tailwind` directives or `tailwind.config.ts`.
+- **Static export.** `next.config.ts` sets `output: "export"` → deploy from `out/`. Netlify config at `netlify.toml` (build: `npm run build`, publish: `out`). No server runtime.
+- **`@/` alias** maps to `src/` (tsconfig.json `paths`).
+- **Tailwind v4** via `@import "tailwindcss"` + `@theme` block in `globals.css`. No `tailwind.config.ts`. Utility classes defined in `globals.css`: `.btn-primary`, `.btn-outline`, `.section-heading`, `.section-subtitle`, `.glass`, `.img-placeholder`, `.gold-accent`, `.card`, `.tag`.
+- **Color palette** (`globals.css` `@theme`): `primary` (#4A2C1D), `primary-light` (#6B4226), `primary-dark` (#2D1A0F), `gold` (#C89B15), `gold-light` (#E0B832), `gold-dark` (#A07E0F), `surface` (#121212), `surface-light` (#1E1E1E), `surface-lighter` (#2A2A2A), `text` (#FFFFFF), `text-muted` (#AFAFAF), `text-dark` (#0D0D0D).
+- **Copy is bilingual** — headings / product descriptions are in English, some body / section text is in Indonesian (`id`).
+- **`"use client"`** in every component (all use framer-motion or browser APIs). Footer too (for scroll-smooth click handler).
+- **All components use `motion.div`** with consistent `initial/whileInView/viewport/transition` pattern for scroll-triggered animations.
+
+## Components
+
+| File | What it does |
+|------|-------------|
+| `Hero.tsx` | Full-screen hero with background video (`/images/vid1.mp4`), 2 CTA buttons (scroll-to-section) |
+| `About.tsx` | 4 highlight cards (Local Sourcing, Quality Selection, Flexible Supply, Responsive Communication) |
+| `Products.tsx` | **4** product cards (Robusta Grade I, Robusta Grade II, Specialty Arabica, Robusta Cherry Red Pick) — brief desc visible, full details + tags expand on "Request Details" click |
+| `Origin.tsx` | Left copy + right image (`/images/tmg.jpeg`), 4 info cards (ketinggian, suhu, tanah, lokasi) |
+| `Process.tsx` | 4-step numbered cards (Selective Harvesting → Processing → Sorting → Packaging) |
+| `WhyUs.tsx` | 4 reason cards (Direct Farm Sourcing, Transparent Communication, Flexible Partnership, Long-Term Focus) |
+| `Gallery.tsx` | **2 videos** only (`/images/vid2.mp4`, `/images/vid3.mp4`) — not images |
+| `Contact.tsx` | Contact channels (WA, IG, Email, Google Maps) + react-hook-form (Zod validated) → opens WhatsApp URL |
+| `Footer.tsx` | 3-col footer (brand, quick links, info with packaging specs / MOQ / WA / email / address) |
+| `WhatsAppButton.tsx` | Floating WA button (appears on scroll > 500px) |
+| `Navbar.tsx` | Sticky glassmorphism nav, mobile hamburger, smooth-scroll nav links |
+
+## Contact form
+
+- **No backend.** On submit, it builds a WhatsApp message URL and opens `wa.me/6281338256185` in a new tab.
+- Form fields: name, email, company (optional), country, product (dropdown), estimate (optional), message.
+
+## Images & assets
+
+- **`public/images/`** contains actual brand assets (logos, profile photo, product photos, videos) — not Unsplash placeholders.
+- Reference as `/images/your-file.jpg` or `/images/your-file.mp4`.
+- `next.config.ts` has `images: { unoptimized: true }` (required for static export).

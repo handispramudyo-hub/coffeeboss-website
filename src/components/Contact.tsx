@@ -15,11 +15,10 @@ import {
 } from "lucide-react";
 
 const contactChannels = [
-  { icon: Phone, label: "WhatsApp", value: "+62 895-3056-5153", href: "https://wa.me/6289530565153" },
+  { icon: Phone, label: "WhatsApp", value: "+62 813-3825-6185", href: "https://wa.me/6281338256185" },
   { icon: Camera, label: "Instagram", value: "@coffeebosindonesia", href: "https://instagram.com/coffeebosindonesia" },
   { icon: Mail, label: "Email", value: "dianasamudraglobalpt@gmail.com", href: "mailto:dianasamudraglobalpt@gmail.com" },
-  { icon: Mail, label: "Marketing", value: "Marketing@coffeebosindonesia.com", href: "mailto:Marketing@coffeebosindonesia.com" },
-  { icon: MapPin, label: "Location", value: "Wonokerso, Kec. Pringsurat, Kab Temanggung, Jawa Tengah" },
+  { icon: MapPin, label: "Location", value: "Jl. Jatirunggo RT 04/01 Kec Pringapus Kab Semarang", href: "https://maps.google.com/?q=Jl.+Jatirunggo+RT+04%2F01+Kec+Pringapus+Kab+Semarang" },
 ];
 
 const formSchema = z.object({
@@ -61,7 +60,7 @@ export default function Contact() {
       .join("\n");
 
     window.open(
-      `https://wa.me/6289530565153?text=${encodeURIComponent(waText)}`,
+      `https://wa.me/6281338256185?text=${encodeURIComponent(waText)}`,
       "_blank"
     );
     setSubmitted(true);
